@@ -1,0 +1,73 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 234d459e5f648d2428808dd1a0b2d21d, type: 3}
+  m_Name: OptionDate
+  m_EditorClassIdentifier: 
+  effectOptions:
+  - "\uFF1F\uFF1F\uFF1F"
+  - "\u4E0D\u7720"
+  - "\u767A\u5149"
+  - "\u5FA9\u5143"
+  - "\u900F\u660E\u5316"
+  - "\u6697\u8996"
+  - "\u8A98\u5F15"
+  - "\u5922\u8997\u304D"
+  - "\u8A00\u8A9E\u89E3\u8AAD"
+  - "\u5909\u8EAB"
+  - "\u602A\u529B"
+  - "\u8AAD\u5FC3"
+  - "\u8150\u98DF"
+  - "\u75D5\u8DE1\u53EF\u8996"
+  - "\u5E78\u904B"
+  - "\u6D6E\u904A"
+  ingredientItems:
+  - ingredientName: "\uFF1F\uFF1F\uFF1F"
+    ingredientIcon: {fileID: 0}
+  - ingredientName: "\u30BD\u30E0\u30CB\u30A6\u30E0\u30ED\u30FC\u30BA"
+    ingredientIcon: {fileID: 21300000, guid: 5bffaf5e689d8074cbfc369042813fc8, type: 3}
+  - ingredientName: "\u30B9\u30BF\u30FC\u30D9\u30EA\u30FC"
+    ingredientIcon: {fileID: 21300000, guid: ee91d30e117b05244954e7c041507824, type: 3}
+  - ingredientName: "\u8A18\u61B6\u306E\u7425\u73C0\u7247"
+    ingredientIcon: {fileID: 21300000, guid: 047de5ebec25f5944ba5884fd8423cfe, type: 3}
+  - ingredientName: "\u30B7\u30EB\u30D5\u306E\u7FBD\u7C89"
+    ingredientIcon: {fileID: 21300000, guid: ef51e89437157c94fb9a51e49eae37a6, type: 3}
+  - ingredientName: "\u51A5\u754C\u306E\u6EF4"
+    ingredientIcon: {fileID: 21300000, guid: b6c03beeface1944e9341fa42e076447, type: 3}
+  - ingredientName: "\u609F\u308A\u30BF\u30B1"
+    ingredientIcon: {fileID: 21300000, guid: 4be043227473b544a9b826cb28af6949, type: 3}
+  colorOptions:
+  - "\uFF1F\uFF1F\uFF1F"
+  - "\u8D64\u8272"
+  - "\u9752\u8272"
+  - "\u9EC4\u8272"
+  - "\u7DD1\u8272"
+  - "\u7D2B\u8272"
+  - "\u6A59\u8272"
+  - "\u6843\u8272"
+  - "\u6C34\u8272"
+  - "\u9EC4\u7DD1\u8272"
+  - "\u8336\u8272"
+  - "\u767D\u8272"
+  - "\u9ED2\u8272"
+  - "\u91D1\u8272"
+  - "\u9280\u8272"
+  - "\u8679\u8272"
+  scentOptions:
+  - "\uFF1F\uFF1F\uFF1F"
+  - "\u82B1\u306E\u9999\u308A"
+  - "\u67D1\u6A58\u306E\u9999\u308A"
+  - "\u85AC\u8349\u306E\u9999\u308A"
+  - "\u6A39\u8102\u306E\u9999\u308A"
+  - "\u304A\u9999\u306E\u9999\u308A"
+  - "\u9999\u8F9B\u6599\u306E\u9999\u308A"
+  - "\u6728\u306E\u9999\u308A"
+  - "\u7121\u81ED"

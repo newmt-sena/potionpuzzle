@@ -1,0 +1,535 @@
+fileFormatVersion: 2
+guid: 0fe25f9957011c940960c60017bfc8a1
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Sprite sheet for Basic Pack_3
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 201
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 7, y: 7, z: 7, w: 7}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9c8b060766dbb7439f6a263ec271c0a
+      internalID: 1166114501
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite sheet for Basic Pack_56
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 153
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 7, y: 7, z: 7, w: 7}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91a836cf0414ff94f8fe2e51fdd6ef94
+      internalID: 2027189929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite sheet for Basic Pack_101
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 105
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 7, y: 7, z: 7, w: 7}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a74968df61768942b61d7c94957de9a
+      internalID: -259351683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite sheet for Basic Pack_232
+      rect:
+        serializedVersion: 2
+        x: 678
+        y: 33
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 433d40f4774c8544199a3f81ae9a72dd
+      internalID: 1369372036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Sprite sheet for Basic Pack_0: -189724484
+      Sprite sheet for Basic Pack_1: -1089512681
+      Sprite sheet for Basic Pack_10: 304862815
+      Sprite sheet for Basic Pack_100: 791236889
+      Sprite sheet for Basic Pack_101: -259351683
+      Sprite sheet for Basic Pack_102: 3444911
+      Sprite sheet for Basic Pack_103: 40908379
+      Sprite sheet for Basic Pack_104: -1159530514
+      Sprite sheet for Basic Pack_105: 1528372847
+      Sprite sheet for Basic Pack_106: -915593421
+      Sprite sheet for Basic Pack_107: 491956848
+      Sprite sheet for Basic Pack_108: -257678353
+      Sprite sheet for Basic Pack_109: -25352017
+      Sprite sheet for Basic Pack_11: 840018069
+      Sprite sheet for Basic Pack_110: -1320997657
+      Sprite sheet for Basic Pack_111: 706005615
+      Sprite sheet for Basic Pack_112: -413310370
+      Sprite sheet for Basic Pack_113: -1727738252
+      Sprite sheet for Basic Pack_114: 1342756103
+      Sprite sheet for Basic Pack_115: -996326332
+      Sprite sheet for Basic Pack_116: -2099761185
+      Sprite sheet for Basic Pack_117: -654053980
+      Sprite sheet for Basic Pack_118: 660247824
+      Sprite sheet for Basic Pack_119: -1636345843
+      Sprite sheet for Basic Pack_12: 1362992494
+      Sprite sheet for Basic Pack_120: -838664355
+      Sprite sheet for Basic Pack_121: -1071628286
+      Sprite sheet for Basic Pack_122: -1027507658
+      Sprite sheet for Basic Pack_123: 1316101028
+      Sprite sheet for Basic Pack_124: -623686163
+      Sprite sheet for Basic Pack_125: 824424688
+      Sprite sheet for Basic Pack_126: -319091898
+      Sprite sheet for Basic Pack_127: 805455981
+      Sprite sheet for Basic Pack_128: -1950081532
+      Sprite sheet for Basic Pack_129: 2135417262
+      Sprite sheet for Basic Pack_13: 209206905
+      Sprite sheet for Basic Pack_130: -1999705083
+      Sprite sheet for Basic Pack_131: 590888811
+      Sprite sheet for Basic Pack_132: 1760248535
+      Sprite sheet for Basic Pack_133: 1905398147
+      Sprite sheet for Basic Pack_134: -1080675266
+      Sprite sheet for Basic Pack_135: -462140117
+      Sprite sheet for Basic Pack_136: 1882393174
+      Sprite sheet for Basic Pack_137: 1857479613
+      Sprite sheet for Basic Pack_138: -764224498
+      Sprite sheet for Basic Pack_139: -673097298
+      Sprite sheet for Basic Pack_14: 1204897552
+      Sprite sheet for Basic Pack_140: 587648753
+      Sprite sheet for Basic Pack_141: 937846064
+      Sprite sheet for Basic Pack_142: 1462795242
+      Sprite sheet for Basic Pack_143: 679051700
+      Sprite sheet for Basic Pack_144: 1890651136
+      Sprite sheet for Basic Pack_145: -1256443136
+      Sprite sheet for Basic Pack_146: -36560008
+      Sprite sheet for Basic Pack_147: -935059071
+      Sprite sheet for Basic Pack_148: -2123861023
+      Sprite sheet for Basic Pack_149: -1120807705
+      Sprite sheet for Basic Pack_15: -1625933732
+      Sprite sheet for Basic Pack_150: 98215322
+      Sprite sheet for Basic Pack_151: 810391368
+      Sprite sheet for Basic Pack_152: -279555480
+      Sprite sheet for Basic Pack_153: 1268002390
+      Sprite sheet for Basic Pack_154: 703145085
+      Sprite sheet for Basic Pack_155: -388554758
+      Sprite sheet for Basic Pack_156: -1365985804
+      Sprite sheet for Basic Pack_157: -413140899
+      Sprite sheet for Basic Pack_158: -1303394234
+      Sprite sheet for Basic Pack_159: 800403633
+      Sprite sheet for Basic Pack_16: 1853634764
+      Sprite sheet for Basic Pack_160: -188088855
+      Sprite sheet for Basic Pack_161: -1855566727
+      Sprite sheet for Basic Pack_162: -1987203761
+      Sprite sheet for Basic Pack_163: -1625076226
+      Sprite sheet for Basic Pack_164: 2023042328
+      Sprite sheet for Basic Pack_165: -1158711933
+      Sprite sheet for Basic Pack_166: -944191977
+      Sprite sheet for Basic Pack_167: -444142875
+      Sprite sheet for Basic Pack_168: 764799652
+      Sprite sheet for Basic Pack_169: 1035638648
+      Sprite sheet for Basic Pack_17: 1012352150
+      Sprite sheet for Basic Pack_170: -2048154969
+      Sprite sheet for Basic Pack_171: -2046158836
+      Sprite sheet for Basic Pack_172: 256849958
+      Sprite sheet for Basic Pack_173: 1670487523
+      Sprite sheet for Basic Pack_174: 1959701359
+      Sprite sheet for Basic Pack_175: 1034260880
+      Sprite sheet for Basic Pack_176: 987412058
+      Sprite sheet for Basic Pack_177: 1218843071
+      Sprite sheet for Basic Pack_178: 1120778784
+      Sprite sheet for Basic Pack_179: 1910183556
+      Sprite sheet for Basic Pack_18: -2017192065
+      Sprite sheet for Basic Pack_180: 985085305
+      Sprite sheet for Basic Pack_181: -1351332497
+      Sprite sheet for Basic Pack_182: 283473183
+      Sprite sheet for Basic Pack_183: -882954141
+      Sprite sheet for Basic Pack_184: 953543075
+      Sprite sheet for Basic Pack_185: 165309408
+      Sprite sheet for Basic Pack_186: -1205051394
+      Sprite sheet for Basic Pack_187: -1506270797
+      Sprite sheet for Basic Pack_188: -1029131806
+      Sprite sheet for Basic Pack_189: -988521425
+      Sprite sheet for Basic Pack_19: -310208171
+      Sprite sheet for Basic Pack_190: 1188465594
+      Sprite sheet for Basic Pack_191: 1819419678
+      Sprite sheet for Basic Pack_192: -588426179
+      Sprite sheet for Basic Pack_193: 956288120
+      Sprite sheet for Basic Pack_194: 502665142
+      Sprite sheet for Basic Pack_195: 1734669723
+      Sprite sheet for Basic Pack_196: -743987618
+      Sprite sheet for Basic Pack_197: 915706554
+      Sprite sheet for Basic Pack_198: 212950458
+      Sprite sheet for Basic Pack_199: -1239230284
+      Sprite sheet for Basic Pack_2: 572781048
+      Sprite sheet for Basic Pack_20: -708179044
+      Sprite sheet for Basic Pack_200: -734187004
+      Sprite sheet for Basic Pack_201: -612016177
+      Sprite sheet for Basic Pack_202: 1479462341
+      Sprite sheet for Basic Pack_203: 1324548785
+      Sprite sheet for Basic Pack_204: 1004386514
+      Sprite sheet for Basic Pack_205: -479906576
+      Sprite sheet for Basic Pack_206: 1710099876
+      Sprite sheet for Basic Pack_207: 2011357903
+      Sprite sheet for Basic Pack_208: 130953470
+      Sprite sheet for Basic Pack_209: -1532522137
+      Sprite sheet for Basic Pack_21: -701283309
+      Sprite sheet for Basic Pack_210: 1605156464
+      Sprite sheet for Basic Pack_211: 734496192
+      Sprite sheet for Basic Pack_212: 900803865
+      Sprite sheet for Basic Pack_213: -129524093
+      Sprite sheet for Basic Pack_214: -1879869998
+      Sprite sheet for Basic Pack_215: 1998003041
+      Sprite sheet for Basic Pack_216: 140826297
+      Sprite sheet for Basic Pack_217: -524926446
+      Sprite sheet for Basic Pack_218: 1510943155
+      Sprite sheet for Basic Pack_219: 871228392
+      Sprite sheet for Basic Pack_22: 125923180
+      Sprite sheet for Basic Pack_220: -1465481967
+      Sprite sheet for Basic Pack_221: 2117758186
+      Sprite sheet for Basic Pack_222: -1684592394
+      Sprite sheet for Basic Pack_223: 1958884606
+      Sprite sheet for Basic Pack_224: -146765332
+      Sprite sheet for Basic Pack_225: -1591489459
+      Sprite sheet for Basic Pack_226: 860684866
+      Sprite sheet for Basic Pack_227: -1430303549
+      Sprite sheet for Basic Pack_228: -165519285
+      Sprite sheet for Basic Pack_229: -1126940783
+      Sprite sheet for Basic Pack_23: -444908782
+      Sprite sheet for Basic Pack_230: 1207128131
+      Sprite sheet for Basic Pack_231: -1244746253
+      Sprite sheet for Basic Pack_232: 1369372036
+      Sprite sheet for Basic Pack_233: -943848653
+      Sprite sheet for Basic Pack_234: 816007383
+      Sprite sheet for Basic Pack_235: -235459673
+      Sprite sheet for Basic Pack_236: -1884786628
+      Sprite sheet for Basic Pack_237: -764740151
+      Sprite sheet for Basic Pack_238: -1214105741
+      Sprite sheet for Basic Pack_239: 631274637
+      Sprite sheet for Basic Pack_24: -472671322
+      Sprite sheet for Basic Pack_240: 1624357892
+      Sprite sheet for Basic Pack_241: -1524890800
+      Sprite sheet for Basic Pack_242: 804884440
+      Sprite sheet for Basic Pack_243: 888737731
+      Sprite sheet for Basic Pack_244: 129426289
+      Sprite sheet for Basic Pack_245: 1695974779
+      Sprite sheet for Basic Pack_246: 1829825534
+      Sprite sheet for Basic Pack_247: 447654356
+      Sprite sheet for Basic Pack_248: 907796022
+      Sprite sheet for Basic Pack_249: -452599187
+      Sprite sheet for Basic Pack_25: 973449776
+      Sprite sheet for Basic Pack_250: -363829079
+      Sprite sheet for Basic Pack_251: 1802638550
+      Sprite sheet for Basic Pack_252: 1094044408
+      Sprite sheet for Basic Pack_253: 501610220
+      Sprite sheet for Basic Pack_254: 2046324336
+      Sprite sheet for Basic Pack_255: -386418870
+      Sprite sheet for Basic Pack_256: 1092158907
+      Sprite sheet for Basic Pack_257: -1293716124
+      Sprite sheet for Basic Pack_258: -1785707445
+      Sprite sheet for Basic Pack_259: 1835351118
+      Sprite sheet for Basic Pack_26: -589053526
+      Sprite sheet for Basic Pack_260: 2027457502
+      Sprite sheet for Basic Pack_261: 950761167
+      Sprite sheet for Basic Pack_262: 1677882019
+      Sprite sheet for Basic Pack_263: -1002377699
+      Sprite sheet for Basic Pack_264: -402539510
+      Sprite sheet for Basic Pack_265: 1108077466
+      Sprite sheet for Basic Pack_266: -172620375
+      Sprite sheet for Basic Pack_267: -2024628862
+      Sprite sheet for Basic Pack_268: -909499959
+      Sprite sheet for Basic Pack_269: -857065007
+      Sprite sheet for Basic Pack_27: 2124507224
+      Sprite sheet for Basic Pack_270: -295020790
+      Sprite sheet for Basic Pack_271: 821963789
+      Sprite sheet for Basic Pack_272: 1796157925
+      Sprite sheet for Basic Pack_273: -41480561
+      Sprite sheet for Basic Pack_274: 1628870211
+      Sprite sheet for Basic Pack_275: 1122799328
+      Sprite sheet for Basic Pack_276: 272357398
+      Sprite sheet for Basic Pack_277: 15432736
+      Sprite sheet for Basic Pack_278: -13051970
+      Sprite sheet for Basic Pack_279: -1683688199
+      Sprite sheet for Basic Pack_28: -1164904974
+      Sprite sheet for Basic Pack_280: -1972515328
+      Sprite sheet for Basic Pack_281: 1971600582
+      Sprite sheet for Basic Pack_282: -1528149792
+      Sprite sheet for Basic Pack_283: 162279037
+      Sprite sheet for Basic Pack_284: -971696532
+      Sprite sheet for Basic Pack_285: -1679984538
+      Sprite sheet for Basic Pack_286: 1383990494
+      Sprite sheet for Basic Pack_287: 919343281
+      Sprite sheet for Basic Pack_288: -1362472410
+      Sprite sheet for Basic Pack_289: 808141368
+      Sprite sheet for Basic Pack_29: -770699279
+      Sprite sheet for Basic Pack_290: -453963934
+      Sprite sheet for Basic Pack_291: 664349025
+      Sprite sheet for Basic Pack_292: 899768071
+      Sprite sheet for Basic Pack_293: 1968312881
+      Sprite sheet for Basic Pack_294: -707544100
+      Sprite sheet for Basic Pack_295: -2139001068
+      Sprite sheet for Basic Pack_296: -2070330369
+      Sprite sheet for Basic Pack_297: -357414419
+      Sprite sheet for Basic Pack_298: -1685360124
+      Sprite sheet for Basic Pack_299: -234266550
+      Sprite sheet for Basic Pack_3: 1166114501
+      Sprite sheet for Basic Pack_30: 1278202068
+      Sprite sheet for Basic Pack_300: 1926741020
+      Sprite sheet for Basic Pack_301: -2144978313
+      Sprite sheet for Basic Pack_302: -901900911
+      Sprite sheet for Basic Pack_303: 549588547
+      Sprite sheet for Basic Pack_304: -2127826260
+      Sprite sheet for Basic Pack_305: 1183217189
+      Sprite sheet for Basic Pack_306: 681612176
+      Sprite sheet for Basic Pack_307: 1432800498
+      Sprite sheet for Basic Pack_308: 230435951
+      Sprite sheet for Basic Pack_309: -1902147058
+      Sprite sheet for Basic Pack_31: 346378645
+      Sprite sheet for Basic Pack_310: -1664013056
+      Sprite sheet for Basic Pack_311: -1597330930
+      Sprite sheet for Basic Pack_312: -843283580
+      Sprite sheet for Basic Pack_313: -6546398
+      Sprite sheet for Basic Pack_314: 1844203706
+      Sprite sheet for Basic Pack_315: 1489226865
+      Sprite sheet for Basic Pack_32: -633131907
+      Sprite sheet for Basic Pack_33: 1753679728
+      Sprite sheet for Basic Pack_34: -1945771848
+      Sprite sheet for Basic Pack_35: -801577127
+      Sprite sheet for Basic Pack_36: 1846272974
+      Sprite sheet for Basic Pack_37: 172582189
+      Sprite sheet for Basic Pack_38: -1388128940
+      Sprite sheet for Basic Pack_39: -40613762
+      Sprite sheet for Basic Pack_4: -1234229099
+      Sprite sheet for Basic Pack_40: -1404638450
+      Sprite sheet for Basic Pack_41: 1275309356
+      Sprite sheet for Basic Pack_42: 57077758
+      Sprite sheet for Basic Pack_43: 1004741049
+      Sprite sheet for Basic Pack_44: -966794300
+      Sprite sheet for Basic Pack_45: -1471002852
+      Sprite sheet for Basic Pack_46: 1578493937
+      Sprite sheet for Basic Pack_47: 71087191
+      Sprite sheet for Basic Pack_48: -1024238944
+      Sprite sheet for Basic Pack_49: -1537045857
+      Sprite sheet for Basic Pack_5: 2043696788
+      Sprite sheet for Basic Pack_50: -466667212
+      Sprite sheet for Basic Pack_51: -697676002
+      Sprite sheet for Basic Pack_52: -717476343
+      Sprite sheet for Basic Pack_53: -1724211564
+      Sprite sheet for Basic Pack_54: -463054054
+      Sprite sheet for Basic Pack_55: -1924325980
+      Sprite sheet for Basic Pack_56: 2027189929
+      Sprite sheet for Basic Pack_57: -2103013514
+      Sprite sheet for Basic Pack_58: 241335512
+      Sprite sheet for Basic Pack_59: -719695739
+      Sprite sheet for Basic Pack_6: -126655659
+      Sprite sheet for Basic Pack_60: 1254080438
+      Sprite sheet for Basic Pack_61: 424451705
+      Sprite sheet for Basic Pack_62: 41770489
+      Sprite sheet for Basic Pack_63: -271445297
+      Sprite sheet for Basic Pack_64: 1385831135
+      Sprite sheet for Basic Pack_65: -310438064
+      Sprite sheet for Basic Pack_66: -1568144102
+      Sprite sheet for Basic Pack_67: -324550879
+      Sprite sheet for Basic Pack_68: 1808881049
+      Sprite sheet for Basic Pack_69: -954492147
+      Sprite sheet for Basic Pack_7: -1604173826
+      Sprite sheet for Basic Pack_70: -2011935789
+      Sprite sheet for Basic Pack_71: -1646109889
+      Sprite sheet for Basic Pack_72: -1500744327
+      Sprite sheet for Basic Pack_73: 1393293604
+      Sprite sheet for Basic Pack_74: 1256554605
+      Sprite sheet for Basic Pack_75: 1215766262
+      Sprite sheet for Basic Pack_76: 2076344636
+      Sprite sheet for Basic Pack_77: 942711510
+      Sprite sheet for Basic Pack_78: 1126985282
+      Sprite sheet for Basic Pack_79: -1115166321
+      Sprite sheet for Basic Pack_8: 985805785
+      Sprite sheet for Basic Pack_80: -1685101931
+      Sprite sheet for Basic Pack_81: 1533364806
+      Sprite sheet for Basic Pack_82: 836807921
+      Sprite sheet for Basic Pack_83: 35114500
+      Sprite sheet for Basic Pack_84: -1039601814
+      Sprite sheet for Basic Pack_85: -1222567618
+      Sprite sheet for Basic Pack_86: -1936052585
+      Sprite sheet for Basic Pack_87: 1114800598
+      Sprite sheet for Basic Pack_88: -1452919416
+      Sprite sheet for Basic Pack_89: 996693603
+      Sprite sheet for Basic Pack_9: -1620926428
+      Sprite sheet for Basic Pack_90: 132523494
+      Sprite sheet for Basic Pack_91: -1361053303
+      Sprite sheet for Basic Pack_92: -953811414
+      Sprite sheet for Basic Pack_93: -49722113
+      Sprite sheet for Basic Pack_94: 1840666816
+      Sprite sheet for Basic Pack_95: -400200284
+      Sprite sheet for Basic Pack_96: 1286831138
+      Sprite sheet for Basic Pack_97: -1566594095
+      Sprite sheet for Basic Pack_98: -1875750651
+      Sprite sheet for Basic Pack_99: -2004761955
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

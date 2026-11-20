@@ -1,0 +1,909 @@
+fileFormatVersion: 2
+guid: a7b697471828369479280f99fb3687c3
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: pipo-emotion2_150
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 781f02dcd75103c419a5d23dc73e3c55
+      internalID: 1741015183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pipo-emotion2_151
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da7a48aa382c592489c308fd43b17b7b
+      internalID: -131646682
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pipo-emotion2_152
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22108ebfcb6a4014eb6a225cc9e71501
+      internalID: -2073423700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pipo-emotion2_153
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff83d4cfbd8359249bcc26c3a382fcbb
+      internalID: -1834105145
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pipo-emotion2_154
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ad7c06b5b4d2094fb3282ecddc1d1bb
+      internalID: 1873629053
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pipo-emotion2_155
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c937c97e2cbee647b3378e3a639ad35
+      internalID: 1054218224
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pipo-emotion2_156
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f739feaf08da1d64f8a31e2dd3fda536
+      internalID: -1098649659
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pipo-emotion2_157
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f52268eed9195647978db82687b8e6b
+      internalID: -1017496181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pipo-emotion2_158
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51f831db3c1689443b2a63cea3043c34
+      internalID: 1915858047
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pipo-emotion2_159
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73d0a4f9a7ba9304885632652d313166
+      internalID: -1662269021
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pipo-emotion2_160
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6329c7caa860d8d4284dc96d7af38a95
+      internalID: -322329015
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pipo-emotion2_161
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea59ae7f53809df40aa39522d448b39d
+      internalID: -1746210122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pipo-emotion2_162
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3192b3601717636489902469535879d3
+      internalID: 1301771755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pipo-emotion2_163
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd06a656ef94dd04d8559fad49aedd3c
+      internalID: 1475493620
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pipo-emotion2_164
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ccb114ff501f6f419a9c7620139c7da
+      internalID: 718495611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pipo-emotion2_165
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71919c38e5d4bde48b3f329079b1944a
+      internalID: -1988046942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pipo-emotion2_166
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a33b23def5e11064faeca856f65c1df4
+      internalID: -110582335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pipo-emotion2_167
+      rect:
+        serializedVersion: 2
+        x: 544
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba56a5173bd579049ad8e8ef9624e2c9
+      internalID: 261810792
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pipo-emotion2_168
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b3c08e73794c4545ba95138f1aea19f
+      internalID: -507576904
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pipo-emotion2_169
+      rect:
+        serializedVersion: 2
+        x: 608
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 060229aad3c32b448a4dcc408c6146a9
+      internalID: 761490069
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pipo-emotion2_170
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39d1cf369ba87564d81ac31f15e6822a
+      internalID: -27514898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pipo-emotion2_171
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8444c36d86128d41a9ef2a1c0c075f0
+      internalID: -426029187
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pipo-emotion2_172
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 285e9ac4aa9a5af4d9107bafc2f4a7ec
+      internalID: -208432987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pipo-emotion2_173
+      rect:
+        serializedVersion: 2
+        x: 736
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f314ccfc3d5b0f14caebebd6936f33c0
+      internalID: 1478306021
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      pipo-emotion2_0: -110240635
+      pipo-emotion2_1: -1276558031
+      pipo-emotion2_10: 305008105
+      pipo-emotion2_100: 917806947
+      pipo-emotion2_101: 36582629
+      pipo-emotion2_102: 612976498
+      pipo-emotion2_103: -1889355894
+      pipo-emotion2_104: -853527197
+      pipo-emotion2_105: -321036372
+      pipo-emotion2_106: 1926064669
+      pipo-emotion2_107: 732777096
+      pipo-emotion2_108: 856202870
+      pipo-emotion2_109: 569229255
+      pipo-emotion2_11: -283592069
+      pipo-emotion2_110: -1678057813
+      pipo-emotion2_111: -1654493341
+      pipo-emotion2_112: 1969345845
+      pipo-emotion2_113: 2045802690
+      pipo-emotion2_114: 317520510
+      pipo-emotion2_115: -376293498
+      pipo-emotion2_116: 940669769
+      pipo-emotion2_117: -909376101
+      pipo-emotion2_118: 1819736497
+      pipo-emotion2_119: 1478819466
+      pipo-emotion2_12: 1536271084
+      pipo-emotion2_120: -25002974
+      pipo-emotion2_121: -793860163
+      pipo-emotion2_122: 1974831116
+      pipo-emotion2_123: 1724999384
+      pipo-emotion2_124: 2055272113
+      pipo-emotion2_125: -1057192416
+      pipo-emotion2_126: 1362920591
+      pipo-emotion2_127: -2127237107
+      pipo-emotion2_128: -946161664
+      pipo-emotion2_129: 1559764882
+      pipo-emotion2_13: 1230364993
+      pipo-emotion2_130: -1153057661
+      pipo-emotion2_131: 862179695
+      pipo-emotion2_132: -1305519793
+      pipo-emotion2_133: 944280696
+      pipo-emotion2_134: 58342154
+      pipo-emotion2_135: 2099171876
+      pipo-emotion2_136: 1552618014
+      pipo-emotion2_137: 1639153247
+      pipo-emotion2_138: -1674526686
+      pipo-emotion2_139: -537097632
+      pipo-emotion2_14: -888431574
+      pipo-emotion2_140: -1255263330
+      pipo-emotion2_141: -927239681
+      pipo-emotion2_142: -1001803408
+      pipo-emotion2_143: -268608914
+      pipo-emotion2_144: 376838205
+      pipo-emotion2_145: -1443943648
+      pipo-emotion2_146: 331016148
+      pipo-emotion2_147: 50267495
+      pipo-emotion2_148: 372869175
+      pipo-emotion2_149: 1196154155
+      pipo-emotion2_15: -1044601302
+      pipo-emotion2_150: 1741015183
+      pipo-emotion2_151: -131646682
+      pipo-emotion2_152: -2073423700
+      pipo-emotion2_153: -1834105145
+      pipo-emotion2_154: 1873629053
+      pipo-emotion2_155: 1054218224
+      pipo-emotion2_156: -1098649659
+      pipo-emotion2_157: -1017496181
+      pipo-emotion2_158: 1915858047
+      pipo-emotion2_159: -1662269021
+      pipo-emotion2_16: 493210066
+      pipo-emotion2_160: -322329015
+      pipo-emotion2_161: -1746210122
+      pipo-emotion2_162: 1301771755
+      pipo-emotion2_163: 1475493620
+      pipo-emotion2_164: 718495611
+      pipo-emotion2_165: -1988046942
+      pipo-emotion2_166: -110582335
+      pipo-emotion2_167: 261810792
+      pipo-emotion2_168: -507576904
+      pipo-emotion2_169: 761490069
+      pipo-emotion2_17: 1009555290
+      pipo-emotion2_170: -27514898
+      pipo-emotion2_171: -426029187
+      pipo-emotion2_172: -208432987
+      pipo-emotion2_173: 1478306021
+      pipo-emotion2_174: 658033290
+      pipo-emotion2_175: 1708922892
+      pipo-emotion2_176: 1234006270
+      pipo-emotion2_177: 235513241
+      pipo-emotion2_178: 1361372576
+      pipo-emotion2_179: 970317939
+      pipo-emotion2_18: -1942924733
+      pipo-emotion2_180: -325027472
+      pipo-emotion2_181: 1756110072
+      pipo-emotion2_182: 460616148
+      pipo-emotion2_183: 2106037917
+      pipo-emotion2_184: -2083174991
+      pipo-emotion2_185: -1052021128
+      pipo-emotion2_186: -628684371
+      pipo-emotion2_187: 118867150
+      pipo-emotion2_188: 2074872872
+      pipo-emotion2_189: 1686915116
+      pipo-emotion2_19: -115180767
+      pipo-emotion2_190: 680078041
+      pipo-emotion2_191: 1632647773
+      pipo-emotion2_192: 1035724573
+      pipo-emotion2_193: -279433110
+      pipo-emotion2_194: 2019909233
+      pipo-emotion2_195: -150371659
+      pipo-emotion2_196: -850912200
+      pipo-emotion2_197: 27205125
+      pipo-emotion2_198: -302186120
+      pipo-emotion2_199: -1949191575
+      pipo-emotion2_2: -812925264
+      pipo-emotion2_20: 276411144
+      pipo-emotion2_200: -1786931230
+      pipo-emotion2_201: -1704013347
+      pipo-emotion2_202: -582220246
+      pipo-emotion2_203: -1331537333
+      pipo-emotion2_204: -569644652
+      pipo-emotion2_205: 1271434459
+      pipo-emotion2_206: -1751031580
+      pipo-emotion2_207: -206650277
+      pipo-emotion2_208: 642352694
+      pipo-emotion2_209: -519820131
+      pipo-emotion2_21: 1615563913
+      pipo-emotion2_210: 1143025305
+      pipo-emotion2_211: -96498497
+      pipo-emotion2_212: 727375803
+      pipo-emotion2_213: 2018139068
+      pipo-emotion2_214: 1784263609
+      pipo-emotion2_215: -1177496245
+      pipo-emotion2_216: 46297690
+      pipo-emotion2_217: 651073405
+      pipo-emotion2_218: 1206617711
+      pipo-emotion2_219: -605778128
+      pipo-emotion2_22: 2116109156
+      pipo-emotion2_220: 1719669413
+      pipo-emotion2_221: -1680904053
+      pipo-emotion2_222: -1583044735
+      pipo-emotion2_223: 437487546
+      pipo-emotion2_224: 1747657129
+      pipo-emotion2_225: 1548862345
+      pipo-emotion2_226: -1192553985
+      pipo-emotion2_227: 585402031
+      pipo-emotion2_228: -430283582
+      pipo-emotion2_229: -350645681
+      pipo-emotion2_23: -1405809482
+      pipo-emotion2_230: 1365363231
+      pipo-emotion2_231: 1919540073
+      pipo-emotion2_232: -1832276551
+      pipo-emotion2_233: -1905153909
+      pipo-emotion2_234: -1051109934
+      pipo-emotion2_235: 925127
+      pipo-emotion2_236: -1810163766
+      pipo-emotion2_237: -2061076558
+      pipo-emotion2_238: 490224389
+      pipo-emotion2_239: 897669257
+      pipo-emotion2_24: 1203137962
+      pipo-emotion2_240: -450074527
+      pipo-emotion2_241: 1297939063
+      pipo-emotion2_242: -1361600801
+      pipo-emotion2_243: -668758271
+      pipo-emotion2_244: -1073119442
+      pipo-emotion2_245: -332926112
+      pipo-emotion2_246: 1059938490
+      pipo-emotion2_247: -1278694914
+      pipo-emotion2_248: -1523562500
+      pipo-emotion2_249: -1193599040
+      pipo-emotion2_25: 1607301827
+      pipo-emotion2_250: 1046491829
+      pipo-emotion2_251: 917132548
+      pipo-emotion2_252: 337873997
+      pipo-emotion2_253: -1661947897
+      pipo-emotion2_254: 1692357408
+      pipo-emotion2_255: -615170454
+      pipo-emotion2_256: -142105616
+      pipo-emotion2_257: 284984164
+      pipo-emotion2_258: 374206224
+      pipo-emotion2_259: 1633866321
+      pipo-emotion2_26: 2001550774
+      pipo-emotion2_260: 236325550
+      pipo-emotion2_261: -1716746771
+      pipo-emotion2_262: -1691697691
+      pipo-emotion2_263: -499121645
+      pipo-emotion2_264: 38456553
+      pipo-emotion2_265: -2012146000
+      pipo-emotion2_266: 782973819
+      pipo-emotion2_267: 1479957296
+      pipo-emotion2_268: -1078758738
+      pipo-emotion2_269: 575799740
+      pipo-emotion2_27: 59650526
+      pipo-emotion2_28: -632349565
+      pipo-emotion2_29: 806633286
+      pipo-emotion2_3: -1734866169
+      pipo-emotion2_30: -1264761049
+      pipo-emotion2_31: -451910506
+      pipo-emotion2_32: -668033830
+      pipo-emotion2_33: 1517637442
+      pipo-emotion2_34: -706344709
+      pipo-emotion2_35: -1192984496
+      pipo-emotion2_36: 1666522332
+      pipo-emotion2_37: 971801724
+      pipo-emotion2_38: -912944205
+      pipo-emotion2_39: 521962898
+      pipo-emotion2_4: 1796987212
+      pipo-emotion2_40: 134407572
+      pipo-emotion2_41: 191246442
+      pipo-emotion2_42: -1266099109
+      pipo-emotion2_43: 1035322367
+      pipo-emotion2_44: 1765174167
+      pipo-emotion2_45: -81815455
+      pipo-emotion2_46: -1559446057
+      pipo-emotion2_47: 537837183
+      pipo-emotion2_48: -936343935
+      pipo-emotion2_49: -638265127
+      pipo-emotion2_5: -427930772
+      pipo-emotion2_50: 1360715032
+      pipo-emotion2_51: -127378377
+      pipo-emotion2_52: 648352584
+      pipo-emotion2_53: -426576992
+      pipo-emotion2_54: -1061139083
+      pipo-emotion2_55: -932341171
+      pipo-emotion2_56: 1194453936
+      pipo-emotion2_57: -582374143
+      pipo-emotion2_58: -1092883295
+      pipo-emotion2_59: -237065998
+      pipo-emotion2_6: 1842437181
+      pipo-emotion2_60: -1782735818
+      pipo-emotion2_61: -1464656557
+      pipo-emotion2_62: 1984239573
+      pipo-emotion2_63: -1301075032
+      pipo-emotion2_64: -961641493
+      pipo-emotion2_65: 2076770972
+      pipo-emotion2_66: 406615785
+      pipo-emotion2_67: -1195191225
+      pipo-emotion2_68: 1508500499
+      pipo-emotion2_69: -2121674303
+      pipo-emotion2_7: 748723851
+      pipo-emotion2_70: -383305761
+      pipo-emotion2_71: -1696408116
+      pipo-emotion2_72: -2045658047
+      pipo-emotion2_73: -678134583
+      pipo-emotion2_74: -843915574
+      pipo-emotion2_75: -1969914938
+      pipo-emotion2_76: 283038112
+      pipo-emotion2_77: 1510099556
+      pipo-emotion2_78: 86329057
+      pipo-emotion2_79: 1258411427
+      pipo-emotion2_8: -1667920003
+      pipo-emotion2_80: 1971577817
+      pipo-emotion2_81: 378345638
+      pipo-emotion2_82: 1603568792
+      pipo-emotion2_83: 1829334408
+      pipo-emotion2_84: 490685522
+      pipo-emotion2_85: 1338038506
+      pipo-emotion2_86: -38693349
+      pipo-emotion2_87: 477177758
+      pipo-emotion2_88: -101789310
+      pipo-emotion2_89: -2051013375
+      pipo-emotion2_9: 1813338872
+      pipo-emotion2_90: -962661913
+      pipo-emotion2_91: -1963285421
+      pipo-emotion2_92: 43902522
+      pipo-emotion2_93: 1708026720
+      pipo-emotion2_94: -652625942
+      pipo-emotion2_95: -607860438
+      pipo-emotion2_96: 451286630
+      pipo-emotion2_97: 656638490
+      pipo-emotion2_98: -1495880520
+      pipo-emotion2_99: -1948213994
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

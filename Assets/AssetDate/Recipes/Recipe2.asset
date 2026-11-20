@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2906607df98ff714ea23b2932deaf490, type: 3}
+  m_Name: Recipe2
+  m_EditorClassIdentifier: 
+  optionData: {fileID: 11400000, guid: 43b7a7db67544c1499a06c4455506840, type: 2}
+  recipeId: 02
+  potionName: "\u899A\u8336"
+  potionIngredientA: "\u609F\u308A\u30BF\u30B1"
+  potionIngredientB: "\u609F\u308A\u30BF\u30B1"
+  potionColor: "\u767D\u8272"
+  potionScent: "\u6728\u306E\u9999\u308A"
+  potionEffect: "\u8AAD\u5FC3"
+  effectMemo: "\u767D\u3044\u8338\u30922\u3064\u716E\u8A70\u3081\u3001\u3086\u3063\u304F\u308A\u3068\u6DF7\u305C\u5408\u308F\u305B\u308B\u3002\u6728\u306E\u9999\u308A\u304C\u7279\u5FB4\u3067\u3001\u5473\u306B\u306F\u304B\u306A\u308A\u30B3\u30AF\u3068\u65E8\u5473\u304C\u3042\u308B\u3002\u8336\u2026\u3068\u3044\u3046\u3088\u308A\u306F\u30B9\u30FC\u30D7\u3060\u304C\u3001\u307E\u3041\u4F3C\u305F\u3088\u3046\u306A\u3082\u3093\u3060\u308D\u3046\u3002"
+  thoughtsMemo: "\u30A8\u30FC\u30C6\u30EB\u306F\u5473\u304C\u6C17\u306B\u5165\u3063\u305F\u306E\u304B\u3001\u8A66\u98F2\u5F8C\u66AB\u304F\u306F\u3054\u6A5F\u5ACC\u306A\u69D8\u5B50\u3060\u3063\u305F\u306A\u3002\u52B9\u679C\u306E\u65B9\u3082\u4F7F\u3044\u3069\u3053\u308D\u304C\u304B\u306A\u308A\u3042\u308A\u305D\u3046\u3060\u3002"
