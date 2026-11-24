@@ -12,15 +12,13 @@ public class RecipeManager : MonoBehaviour
     // ★ UI更新中かどうかを判定するフラグ
     private bool isUpdatingUI = false;
 
-    [Header("レシピデータベース")]
-    [SerializeField] private RecipeDatabase recipeDatabase;
-
     [System.Serializable]
     public class RecipeSlot
     {
-        public RecipeDatabase.RecipeEntry targetRecipe;
-        [HideInInspector] public bool isConfirmed = false;
+        public RecipeData targetRecipe;       // 正解データ（ScriptableObject）
+        [HideInInspector] public bool isConfirmed = false; // 確定フラグ
 
+        // プレイヤーが入力中の選択値を保持する変数（名前の代わりに「効能」を保持）
         [HideInInspector] public string inputEffect;
         [HideInInspector] public string inputA;
         [HideInInspector] public string inputB;
@@ -64,14 +62,7 @@ public class RecipeManager : MonoBehaviour
     {
         UpdateProgressDisplay();
 
-        if (recipeDatabase != null && recipeDatabase.recipes != null)
-        {
-            recipePages.Clear();
-            foreach (var entry in recipeDatabase.recipes)
-            {
-                recipePages.Add(new RecipeSlot { targetRecipe = entry });
-            }
-        }
+        
 
         // 参照エラー防止ガード
         if (rowUI == null || optionData == null)
