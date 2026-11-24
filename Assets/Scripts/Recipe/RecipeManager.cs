@@ -12,13 +12,15 @@ public class RecipeManager : MonoBehaviour
     // ★ UI更新中かどうかを判定するフラグ
     private bool isUpdatingUI = false;
 
+    [Header("レシピデータベース")]
+    [SerializeField] private RecipeDatabase recipeDatabase;
+
     [System.Serializable]
     public class RecipeSlot
     {
-        public RecipeData targetRecipe;       // 正解データ（ScriptableObject）
-        [HideInInspector] public bool isConfirmed = false; // 確定フラグ
+        public RecipeDatabase.RecipeEntry targetRecipe;
+        [HideInInspector] public bool isConfirmed = false;
 
-        // プレイヤーが入力中の選択値を保持する変数（名前の代わりに「効能」を保持）
         [HideInInspector] public string inputEffect;
         [HideInInspector] public string inputA;
         [HideInInspector] public string inputB;
@@ -61,6 +63,15 @@ public class RecipeManager : MonoBehaviour
     private void Start()
     {
         UpdateProgressDisplay();
+
+        if (recipeDatabase != null && recipeDatabase.recipes != null)
+        {
+            recipePages.Clear();
+            foreach (var entry in recipeDatabase.recipes)
+            {
+                recipePages.Add(new RecipeSlot { targetRecipe = entry });
+            }
+        }
 
         // 参照エラー防止ガード
         if (rowUI == null || optionData == null)
@@ -517,24 +528,7 @@ public class RecipeManager : MonoBehaviour
 
             CheckProgressionAfterConfirm();
         }
-        else
-        {
-            Debug.Log($"【不正解】レシピ {currentPageIndex + 1} はまだ一致していません。");
-
-            // デバッグ出力
-            RecipeData.DebugResult result = currentPage.targetRecipe.GetDebugResult(
-                currentPage.inputA,
-                currentPage.inputB,
-                currentPage.inputColor,
-                currentPage.inputScent,
-                currentPage.inputEffect);
-
-            Debug.Log($"--- レシピ[{currentPageIndex + 1}] 判定結果 ---");
-            Debug.Log($"効能（{currentPage.inputEffect}）: {(result.isEffectCorrect ? "正解" : "不正解")}");
-            Debug.Log($"材料（{currentPage.inputA} + {currentPage.inputB}）: {(result.isIngredients ? "正解" : "不正解")}");
-            Debug.Log($"色（{currentPage.inputColor}）: {(result.isColorCorrect ? "正解" : "不正解")}");
-            Debug.Log($"香り（{currentPage.inputScent}）: {(result.isScentCorrect ? "正解" : "不正解")}");
-        }
+       
     }
 
     /// <summary>

@@ -344,15 +344,15 @@ MonoBehaviour:
       m_Calls: []
   m_text: Button
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 37cac69d53567454e918105f7b339db3, type: 2}
-  m_sharedMaterial: {fileID: 2081465383206915352, guid: 37cac69d53567454e918105f7b339db3, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: d67bfe3afa0b3244eb3a645b679a437d, type: 2}
+  m_sharedMaterial: {fileID: 5726138766717476931, guid: d67bfe3afa0b3244eb3a645b679a437d, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4280505716
-  m_fontColor: {r: 0.454902, g: 0.33333334, b: 0.13725491, a: 1}
+    rgba: 4280564506
+  m_fontColor: {r: 0.101960786, g: 0.23137255, b: 0.14117648, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:

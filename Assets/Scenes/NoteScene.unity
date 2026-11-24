@@ -163,8 +163,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Option A
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 9c0a8ef4d08bc0a4b9c0e64f27b3142d, type: 2}
-  m_sharedMaterial: {fileID: 2088100570785991278, guid: 9c0a8ef4d08bc0a4b9c0e64f27b3142d, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: f7b0771d56c3ee84f8c02d56c6b2e6ef, type: 2}
+  m_sharedMaterial: {fileID: 3435809442480577887, guid: f7b0771d56c3ee84f8c02d56c6b2e6ef, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3514,8 +3514,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Option A
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 9c0a8ef4d08bc0a4b9c0e64f27b3142d, type: 2}
-  m_sharedMaterial: {fileID: 2088100570785991278, guid: 9c0a8ef4d08bc0a4b9c0e64f27b3142d, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: f7b0771d56c3ee84f8c02d56c6b2e6ef, type: 2}
+  m_sharedMaterial: {fileID: 3435809442480577887, guid: f7b0771d56c3ee84f8c02d56c6b2e6ef, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -5518,6 +5518,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be4ac7673b0dc224daa2e820f084166b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  recipeDatabase: {fileID: 0}
   tocPanel: {fileID: 466412067}
   tocButtonContainer: {fileID: 230278522}
   tocButtonPrefab: {fileID: 3799963218006896449, guid: 61e5a18cbd252bd47b069824f3ce3e5d, type: 3}
@@ -5530,105 +5531,285 @@ MonoBehaviour:
   prevButton: {fileID: 1219910476}
   nextButton: {fileID: 1546242475}
   recipePages:
-  - targetRecipe: {fileID: 11400000, guid: 6fb3d3aff8fd62d45a7434bbe04f38fa, type: 2}
+  - targetRecipe:
+      recipeId: 
+      potionName: 
+      potionIngredientA: 
+      potionIngredientB: 
+      potionColor: 
+      potionScent: 
+      potionEffect: 
+      effectMemo: 
+      thoughtsMemo: 
+      effectMemoFull: 
+      arcanaComment: 
+      etherComment: 
     isConfirmed: 0
     inputEffect: 
     inputA: 
     inputB: 
     inputColor: 
     inputScent: 
-  - targetRecipe: {fileID: 11400000, guid: 71ee8e086803d5146892f851e1346419, type: 2}
+  - targetRecipe:
+      recipeId: 
+      potionName: 
+      potionIngredientA: 
+      potionIngredientB: 
+      potionColor: 
+      potionScent: 
+      potionEffect: 
+      effectMemo: 
+      thoughtsMemo: 
+      effectMemoFull: 
+      arcanaComment: 
+      etherComment: 
     isConfirmed: 0
     inputEffect: 
     inputA: 
     inputB: 
     inputColor: 
     inputScent: 
-  - targetRecipe: {fileID: 11400000, guid: ad57c6cadc57dbb4dadca5e90dadfa56, type: 2}
+  - targetRecipe:
+      recipeId: 
+      potionName: 
+      potionIngredientA: 
+      potionIngredientB: 
+      potionColor: 
+      potionScent: 
+      potionEffect: 
+      effectMemo: 
+      thoughtsMemo: 
+      effectMemoFull: 
+      arcanaComment: 
+      etherComment: 
     isConfirmed: 0
     inputEffect: 
     inputA: 
     inputB: 
     inputColor: 
     inputScent: 
-  - targetRecipe: {fileID: 11400000, guid: 673904b8defed644c8dcf5568252c46b, type: 2}
+  - targetRecipe:
+      recipeId: 
+      potionName: 
+      potionIngredientA: 
+      potionIngredientB: 
+      potionColor: 
+      potionScent: 
+      potionEffect: 
+      effectMemo: 
+      thoughtsMemo: 
+      effectMemoFull: 
+      arcanaComment: 
+      etherComment: 
     isConfirmed: 0
     inputEffect: 
     inputA: 
     inputB: 
     inputColor: 
     inputScent: 
-  - targetRecipe: {fileID: 11400000, guid: be6ac47331fe1414091c855e49d063f1, type: 2}
+  - targetRecipe:
+      recipeId: 
+      potionName: 
+      potionIngredientA: 
+      potionIngredientB: 
+      potionColor: 
+      potionScent: 
+      potionEffect: 
+      effectMemo: 
+      thoughtsMemo: 
+      effectMemoFull: 
+      arcanaComment: 
+      etherComment: 
     isConfirmed: 0
     inputEffect: 
     inputA: 
     inputB: 
     inputColor: 
     inputScent: 
-  - targetRecipe: {fileID: 11400000, guid: 078211d0cd2ca8745916ad0ac50d3d31, type: 2}
+  - targetRecipe:
+      recipeId: 
+      potionName: 
+      potionIngredientA: 
+      potionIngredientB: 
+      potionColor: 
+      potionScent: 
+      potionEffect: 
+      effectMemo: 
+      thoughtsMemo: 
+      effectMemoFull: 
+      arcanaComment: 
+      etherComment: 
     isConfirmed: 0
     inputEffect: 
     inputA: 
     inputB: 
     inputColor: 
     inputScent: 
-  - targetRecipe: {fileID: 11400000, guid: 816270cf9d35ef24fa54d16eea203e4a, type: 2}
+  - targetRecipe:
+      recipeId: 
+      potionName: 
+      potionIngredientA: 
+      potionIngredientB: 
+      potionColor: 
+      potionScent: 
+      potionEffect: 
+      effectMemo: 
+      thoughtsMemo: 
+      effectMemoFull: 
+      arcanaComment: 
+      etherComment: 
     isConfirmed: 0
     inputEffect: 
     inputA: 
     inputB: 
     inputColor: 
     inputScent: 
-  - targetRecipe: {fileID: 11400000, guid: 802b612ff3e40f4459ba2b10094872bf, type: 2}
+  - targetRecipe:
+      recipeId: 
+      potionName: 
+      potionIngredientA: 
+      potionIngredientB: 
+      potionColor: 
+      potionScent: 
+      potionEffect: 
+      effectMemo: 
+      thoughtsMemo: 
+      effectMemoFull: 
+      arcanaComment: 
+      etherComment: 
     isConfirmed: 0
     inputEffect: 
     inputA: 
     inputB: 
     inputColor: 
     inputScent: 
-  - targetRecipe: {fileID: 11400000, guid: 2acd6318a5075384b9f3a22689143e80, type: 2}
+  - targetRecipe:
+      recipeId: 
+      potionName: 
+      potionIngredientA: 
+      potionIngredientB: 
+      potionColor: 
+      potionScent: 
+      potionEffect: 
+      effectMemo: 
+      thoughtsMemo: 
+      effectMemoFull: 
+      arcanaComment: 
+      etherComment: 
     isConfirmed: 0
     inputEffect: 
     inputA: 
     inputB: 
     inputColor: 
     inputScent: 
-  - targetRecipe: {fileID: 11400000, guid: 95fb5b5f4c938214781c1f0a36403b39, type: 2}
+  - targetRecipe:
+      recipeId: 
+      potionName: 
+      potionIngredientA: 
+      potionIngredientB: 
+      potionColor: 
+      potionScent: 
+      potionEffect: 
+      effectMemo: 
+      thoughtsMemo: 
+      effectMemoFull: 
+      arcanaComment: 
+      etherComment: 
     isConfirmed: 0
     inputEffect: 
     inputA: 
     inputB: 
     inputColor: 
     inputScent: 
-  - targetRecipe: {fileID: 11400000, guid: 38b9fea1423229b44879412d71a532d3, type: 2}
+  - targetRecipe:
+      recipeId: 
+      potionName: 
+      potionIngredientA: 
+      potionIngredientB: 
+      potionColor: 
+      potionScent: 
+      potionEffect: 
+      effectMemo: 
+      thoughtsMemo: 
+      effectMemoFull: 
+      arcanaComment: 
+      etherComment: 
     isConfirmed: 0
     inputEffect: 
     inputA: 
     inputB: 
     inputColor: 
     inputScent: 
-  - targetRecipe: {fileID: 11400000, guid: 277e2ee978495b641a06f8b6a0a9ab5e, type: 2}
+  - targetRecipe:
+      recipeId: 
+      potionName: 
+      potionIngredientA: 
+      potionIngredientB: 
+      potionColor: 
+      potionScent: 
+      potionEffect: 
+      effectMemo: 
+      thoughtsMemo: 
+      effectMemoFull: 
+      arcanaComment: 
+      etherComment: 
     isConfirmed: 0
     inputEffect: 
     inputA: 
     inputB: 
     inputColor: 
     inputScent: 
-  - targetRecipe: {fileID: 11400000, guid: 3a8dfe668a4296c40bade23e94847dbc, type: 2}
+  - targetRecipe:
+      recipeId: 
+      potionName: 
+      potionIngredientA: 
+      potionIngredientB: 
+      potionColor: 
+      potionScent: 
+      potionEffect: 
+      effectMemo: 
+      thoughtsMemo: 
+      effectMemoFull: 
+      arcanaComment: 
+      etherComment: 
     isConfirmed: 0
     inputEffect: 
     inputA: 
     inputB: 
     inputColor: 
     inputScent: 
-  - targetRecipe: {fileID: 11400000, guid: 23f382788225d6540bb6ec93b41a7218, type: 2}
+  - targetRecipe:
+      recipeId: 
+      potionName: 
+      potionIngredientA: 
+      potionIngredientB: 
+      potionColor: 
+      potionScent: 
+      potionEffect: 
+      effectMemo: 
+      thoughtsMemo: 
+      effectMemoFull: 
+      arcanaComment: 
+      etherComment: 
     isConfirmed: 0
     inputEffect: 
     inputA: 
     inputB: 
     inputColor: 
     inputScent: 
-  - targetRecipe: {fileID: 11400000, guid: 69c783c4314b26740a650741b2921624, type: 2}
+  - targetRecipe:
+      recipeId: 
+      potionName: 
+      potionIngredientA: 
+      potionIngredientB: 
+      potionColor: 
+      potionScent: 
+      potionEffect: 
+      effectMemo: 
+      thoughtsMemo: 
+      effectMemoFull: 
+      arcanaComment: 
+      etherComment: 
     isConfirmed: 0
     inputEffect: 
     inputA: 
@@ -8112,8 +8293,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u30C6\u30B9\u30C8\u30C6\u30B9\u30C8\u30C6\u30B9\u30C8\u30C6\u30B9\u30C8\u30C6\u30B9\u30C8"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 9c0a8ef4d08bc0a4b9c0e64f27b3142d, type: 2}
-  m_sharedMaterial: {fileID: 2088100570785991278, guid: 9c0a8ef4d08bc0a4b9c0e64f27b3142d, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: f7b0771d56c3ee84f8c02d56c6b2e6ef, type: 2}
+  m_sharedMaterial: {fileID: 3435809442480577887, guid: f7b0771d56c3ee84f8c02d56c6b2e6ef, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -8318,8 +8499,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Option A
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 9c0a8ef4d08bc0a4b9c0e64f27b3142d, type: 2}
-  m_sharedMaterial: {fileID: 2088100570785991278, guid: 9c0a8ef4d08bc0a4b9c0e64f27b3142d, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: f7b0771d56c3ee84f8c02d56c6b2e6ef, type: 2}
+  m_sharedMaterial: {fileID: 3435809442480577887, guid: f7b0771d56c3ee84f8c02d56c6b2e6ef, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -8855,8 +9036,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Option A
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 9c0a8ef4d08bc0a4b9c0e64f27b3142d, type: 2}
-  m_sharedMaterial: {fileID: 2088100570785991278, guid: 9c0a8ef4d08bc0a4b9c0e64f27b3142d, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: f7b0771d56c3ee84f8c02d56c6b2e6ef, type: 2}
+  m_sharedMaterial: {fileID: 3435809442480577887, guid: f7b0771d56c3ee84f8c02d56c6b2e6ef, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -10051,8 +10232,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Option A
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 9c0a8ef4d08bc0a4b9c0e64f27b3142d, type: 2}
-  m_sharedMaterial: {fileID: 2088100570785991278, guid: 9c0a8ef4d08bc0a4b9c0e64f27b3142d, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: f7b0771d56c3ee84f8c02d56c6b2e6ef, type: 2}
+  m_sharedMaterial: {fileID: 3435809442480577887, guid: f7b0771d56c3ee84f8c02d56c6b2e6ef, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
