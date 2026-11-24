@@ -20,13 +20,21 @@ public class RecipeData : ScriptableObject
     [SerializeField] private string potionScent;//正解の香り
     [SerializeField] private string potionEffect;//正解の効能
 
-    [Header("レシピに残っているヒントメモ")]
+    [Header("虫食いヒントメモ")]
     [TextArea(2, 4)]
     [SerializeField] private string effectMemo;
 
-    [Header("確定後に出るメモ")]
+    [Header("虫食いなし、完全版メモ")]
+    [TextArea(2, 4)]
+    [SerializeField] private string trueEffectMemo;
+
+    [Header("確定後に出るアルカナメモ")]
     [TextArea(2, 4)]
     [SerializeField] private string thoughtsMemo;
+
+    [Header("確定後に出るアルカナ・エーテルメモ(オマケ用)")]
+    [TextArea(2, 4)]
+    [SerializeField] private string clearThoughtsMemo;
 
     //↓読み取り専用にしてる、こうすると外から名前を変えられない
     public string PotionName => potionName;
@@ -38,13 +46,19 @@ public class RecipeData : ScriptableObject
 
 
     public string EffectMemo => effectMemo;
+
+    public string TrueEffectMemo => trueEffectMemo;
+
     public string ThoughtsMemo => thoughtsMemo;
+
+    public string ClearThoughtsMemo => clearThoughtsMemo;
 
     // Editor拡張から値を安全に書き換えるためのメソッド
     public void SetValues(
-        string name, string ingA, string ingB, 
-        string color, string scent,string effect, string effectmemo = "",
-        string thoughts = "")
+        string name, string ingA, string ingB,
+        string color, string scent, string effect,
+        string effectmemo = "", string thoughts = "",
+        string trueEffectmemo = "", string clearThoughts = "")
     {
         potionName = name;
         potionIngredientA = ingA;
@@ -54,6 +68,8 @@ public class RecipeData : ScriptableObject
         potionEffect = effect;
         if (!string.IsNullOrEmpty(effectmemo)) effectMemo = effectmemo;
         if (!string.IsNullOrEmpty(thoughts)) thoughtsMemo = thoughts;
+        if (!string.IsNullOrEmpty(trueEffectmemo)) trueEffectMemo = trueEffectmemo;
+        if (!string.IsNullOrEmpty(clearThoughts)) clearThoughtsMemo = clearThoughts;
     }
 
     public struct DebugResult
@@ -86,7 +102,7 @@ public class RecipeData : ScriptableObject
 
 
 
-
+    
     public bool recipeChecker(
          string inputA, string inputB,
          string inputColor, string inputScent, string inputEffect)

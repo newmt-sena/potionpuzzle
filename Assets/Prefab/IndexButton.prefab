@@ -235,7 +235,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 257, y: 5}
+  m_AnchoredPosition: {x: 250, y: 5}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8466285738810159315
@@ -342,7 +342,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Button
+  m_text: "No1.\u30EB\u30DF\u30CA\u30B9\u30FB\u30E2\u30EB\u30BF\u30EB"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d67bfe3afa0b3244eb3a645b679a437d, type: 2}
   m_sharedMaterial: {fileID: 5726138766717476931, guid: d67bfe3afa0b3244eb3a645b679a437d, type: 2}
@@ -369,8 +369,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 55
-  m_fontSizeBase: 55
+  m_fontSize: 47
+  m_fontSizeBase: 47
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18

@@ -2,10 +2,8 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
-using static UnityEngine.Rendering.DebugUI.Table;
 
 public class RecipeManager : MonoBehaviour
 {
@@ -27,9 +25,18 @@ public class RecipeManager : MonoBehaviour
     }
 
     [Header("目次（インデックス）UI参照")]
-    [SerializeField] private GameObject tocPanel; // 目次パネル（オブジェクト全体）
-    [SerializeField] private Transform tocButtonContainer; // 目次のボタンを並べる親（Content等）
-    [SerializeField] private GameObject tocButtonPrefab;   // 目次の1項目分のボタンプレハブ
+    [SerializeField] private GameObject tocPanel;              // 目次パネル（オブジェクト全体）
+    [SerializeField] private Transform tocButtonContainer;    // 目次のボタンを並べる親（Content等）
+    [SerializeField] private GameObject tocButtonPrefab;       // 目次の1項目分のボタンプレハブ
+
+    [SerializeField] private int tocItemsPerPage = 10; // 1見開き（2行×5列や左右5+5など）で表示する数
+    [SerializeField] private TextMeshProUGUI tocPageText; // 例：「目次 1 / 3」
+    [SerializeField] private GameObject tocPrevButton;    // 目次「前へ」ボタン
+    [SerializeField] private GameObject tocNextButton;    // 目次「次へ」ボタン
+    private int currentTocPageIndex = 0;
+
+    [Header("材料解説ページUI参照")]
+    [SerializeField] private GameObject ingredientGuidePanel;  // 目次の次に開く材料解説パネル
 
     [Header("画面固定UI参照")]
     [SerializeField] private RectTransform sceneChangeButtonRect; // シーンチェンジボタン（または共通ヘッダー）
@@ -45,9 +52,9 @@ public class RecipeManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI contentsprogressText;  // 例：「解明済み：3 / 15」を表示するテキスト
 
     [Header("ページ送りUI参照")]
-    [SerializeField] private TextMeshProUGUI pageText; // 「1 / 15」などのページ表示用テキスト
-    [SerializeField] private GameObject prevButton; // 「前へ」ボタンのGameObject
-    [SerializeField] private GameObject nextButton; // 「次へ」ボタンのGameObject
+    [SerializeField] private TextMeshProUGUI pageText; // 「レシピ 1 / 15」などのページ表示用テキスト
+    [SerializeField] private GameObject prevButton;  // 「前へ」ボタンのGameObject
+    [SerializeField] private GameObject nextButton;  // 「次へ」ボタンのGameObject
 
     [Header("全レシピのデータリスト")]
     [SerializeField] private List<RecipeSlot> recipePages = new List<RecipeSlot>();
@@ -62,16 +69,13 @@ public class RecipeManager : MonoBehaviour
     {
         UpdateProgressDisplay();
 
-        
-
-        // 参照エラー防止ガード
         if (rowUI == null || optionData == null)
         {
             Debug.LogError("RecipeManager: rowUI または optionData がインスペクターでセットされていません！");
             return;
         }
 
-        // データの復元処理（既存のままでOK）
+        // データの復元処理
         for (int i = 0; i < recipePages.Count; i++)
         {
             var saved = RecipeDataStore.GetPageData(i);
@@ -97,7 +101,7 @@ public class RecipeManager : MonoBehaviour
         // 目次ボタンの動的生成
         InitializeTableOfContents();
 
-        // ★ ゲーム起動時は必ず「目次」を開いた状態にする
+        // ゲーム起動時は必ず「目次」を開いた状態にする
         OpenTableOfContents();
 
         // コールバック接続
@@ -105,18 +109,51 @@ public class RecipeManager : MonoBehaviour
     }
 
     /// <summary>
+    /// 未確定時は「No.1」、確定後はポーション名を返す
+    /// </summary>
+    private string GetDisplayPotionName(int index, RecipeSlot slot)
+    {
+        string fallbackNumber = $"No.{index + 1}";
+
+        if (slot == null || slot.targetRecipe == null)
+        {
+            return fallbackNumber;
+        }
+
+        if (slot.isConfirmed && !string.IsNullOrEmpty(slot.targetRecipe.PotionName))
+        {
+            return $"{fallbackNumber}.{slot.targetRecipe.PotionName}";
+        }
+
+        return fallbackNumber;
+    }
+
+    /// <summary>
+    /// 効能メモの表示テキストを取得する（全クリア後などに虫食いなしへ切り替える場合はここで制御）
+    /// </summary>
+    private string GetDisplayEffectMemo(RecipeData recipe, bool useFullVersion = false)
+    {
+        if (recipe == null) return "";
+
+        if (useFullVersion && !string.IsNullOrEmpty(recipe.TrueEffectMemo))
+        {
+            return recipe.TrueEffectMemo;
+        }
+
+        return recipe.EffectMemo;
+    }
+
+    /// <summary>
     /// ドロップダウン変更時にコールバックされるメイン処理
     /// </summary>
     private void OnDropdownValueChanged()
     {
-        // UI更新中なら何もしない（無限ループ防止）
         if (isUpdatingUI) return;
 
         SaveCurrentInput();
 
         RecipeSlot currentPage = recipePages[currentPageIndex];
 
-        // データの保存（inputName の代わりに inputEffect を保存）
         RecipeDataStore.SavePageData(
             currentPageIndex,
             currentPage.isConfirmed,
@@ -129,7 +166,6 @@ public class RecipeManager : MonoBehaviour
 
         if (currentPage.isConfirmed) return;
 
-        // 5つの選択肢がすべて選ばれているかチェックして自動判定
         if (rowUI.IsAllElementsSelected())
         {
             CheckCurrentAnswerAuto();
@@ -137,13 +173,12 @@ public class RecipeManager : MonoBehaviour
     }
 
     /// <summary>
-    /// 現在の入力値を保存してから、指定したページを表示に反映する
+    /// 指定したレシピページを表示に反映する
     /// </summary>
     private void UpdatePageDisplay()
     {
         if (recipePages.Count == 0 || rowUI == null || optionData == null) return;
 
-        // UI更新開始
         isUpdatingUI = true;
 
         try
@@ -152,15 +187,16 @@ public class RecipeManager : MonoBehaviour
 
             CleanUpConfirmedInputs(currentPage);
 
-            // ★ ポーション名（固定見出し）をUIにセット
+            // 未確定なら No.1 / No.2、確定後ならポーション名を表示
+            string displayName = GetDisplayPotionName(currentPageIndex, currentPage);
+            rowUI.SetPotionNameText(displayName);
+
             if (currentPage.targetRecipe != null)
             {
-                rowUI.SetPotionNameText(currentPage.targetRecipe.PotionName);
-                rowUI.SetEffectMemo(currentPage.targetRecipe.EffectMemo);
+                rowUI.SetEffectMemo(GetDisplayEffectMemo(currentPage.targetRecipe, useFullVersion: false));
             }
             else
             {
-                rowUI.SetPotionNameText("不明なポーション");
                 rowUI.SetEffectMemo("");
             }
 
@@ -173,13 +209,12 @@ public class RecipeManager : MonoBehaviour
                 rowUI.SetThoughtsMemo("");
             }
 
-            // ★ ここでハンコの表示・非表示を切り替える！
+            // ハンコ・メモの表示切り替え
             rowUI.SetStampActive(currentPage.isConfirmed);
             rowUI.SetMemoActive(currentPage.isConfirmed);
 
             RefreshConfirmedLists();
 
-            // ドロップダウンの初期化（ConfirmedNames の代わりに confirmedEffects を渡す）
             rowUI.InitializeDropdown(
                 optionData,
                 confirmedEffects,
@@ -188,7 +223,6 @@ public class RecipeManager : MonoBehaviour
                 currentPage.inputColor
             );
 
-            // 選択値の反映
             rowUI.SetSelectedValues(
                 currentPage.inputEffect,
                 currentPage.inputA,
@@ -198,9 +232,7 @@ public class RecipeManager : MonoBehaviour
             );
 
             rowUI.SetInteractable(!currentPage.isConfirmed);
-            
             HideDropdownArrows(!currentPage.isConfirmed);
-
             rowUI.SetDropdownSprites(currentPage.isConfirmed);
 
             UpdateProgressDisplay();
@@ -214,19 +246,17 @@ public class RecipeManager : MonoBehaviour
         }
         finally
         {
-            // 全UIの更新が終わってからフラグ解除
             isUpdatingUI = false;
         }
     }
 
-    /// <summary>
-    /// 最初のページなら「前へ」を非表示、最終ページなら「次へ」を非表示にする
-    /// </summary>
     private void UpdateNavigationButtons()
     {
         if (prevButton != null)
         {
-            prevButton.SetActive(currentPageIndex > 0);
+            // 材料解説パネルがあるなら No.1（index 0）でも「前へ」を表示
+            bool canGoPrev = ingredientGuidePanel != null ? (currentPageIndex >= 0) : (currentPageIndex > 0);
+            prevButton.SetActive(canGoPrev);
         }
 
         if (nextButton != null)
@@ -235,9 +265,6 @@ public class RecipeManager : MonoBehaviour
         }
     }
 
-    /// <summary>
-    /// 達成度（解明済み数 / 全レシピ数）を計算してテキストに反映する
-    /// </summary>
     private void UpdateProgressDisplay()
     {
         if (contentsprogressText == null || recipePages == null || recipePages.Count == 0) return;
@@ -252,14 +279,8 @@ public class RecipeManager : MonoBehaviour
         }
 
         contentsprogressText.text = $"解明済み：{confirmedCount} / {recipePages.Count}";
-
-        
-        
     }
 
-    /// <summary>
-    /// 各ページの確定状態をチェックし、確定済みの「効能」と「色」のリストを更新する
-    /// </summary>
     private void RefreshConfirmedLists()
     {
         confirmedEffects.Clear();
@@ -269,16 +290,12 @@ public class RecipeManager : MonoBehaviour
         {
             if (page.isConfirmed && page.targetRecipe != null)
             {
-                // 正解の「効能」と「色」を確定済みリストに追加
-                confirmedEffects.Add(page.targetRecipe.PotionEffectt); // ※RecipeData側のプロパティ名に合わせる
+                confirmedEffects.Add(page.targetRecipe.PotionEffectt);
                 confirmedColors.Add(page.targetRecipe.PotionColor);
             }
         }
     }
 
-    /// <summary>
-    /// 現在の画面上のドロップダウン入力値をデータ構造に保存する
-    /// </summary>
     private void SaveCurrentInput()
     {
         if (recipePages.Count == 0 || rowUI == null) return;
@@ -294,7 +311,7 @@ public class RecipeManager : MonoBehaviour
         currentPage.inputScent = rowUI.GetSelectedScent();
     }
 
-    #region ページ送りUIイベント
+    #region ページ送り・目次／材料解説遷移
 
     public void NextPage()
     {
@@ -316,134 +333,240 @@ public class RecipeManager : MonoBehaviour
             currentPageIndex--;
             UpdatePageDisplay();
         }
+        else if (ingredientGuidePanel != null)
+        {
+            OpenIngredientGuide();
+        }
     }
 
-    #endregion
-
     /// <summary>
-    /// 外部から直接指定ページにジャンプする
+    /// 目次の上部「次へ」ボタンから呼ぶ：材料解説ページを開く
     /// </summary>
-    public void JumpToPage(int pageIndex)
+    public void OpenIngredientGuide()
     {
-        currentPageIndex = Mathf.Clamp(pageIndex, 0, recipePages.Count - 1);
+        SaveCurrentInput();
 
-        // ★ 1. 目次パネルを非表示にする
         if (tocPanel != null)
         {
             tocPanel.SetActive(false);
         }
 
-        // ★ 2. 詳細画面（rowUI）のゲームオブジェクトを確実に表示する
+        if (rowUI != null)
+        {
+            rowUI.gameObject.SetActive(false);
+        }
+
+        if (ingredientGuidePanel != null)
+        {
+            ingredientGuidePanel.SetActive(true);
+            ingredientGuidePanel.transform.SetAsLastSibling();
+        }
+
+        BringFixedButtonsToFront();
+    }
+
+    /// <summary>
+    /// 材料解説ページの「次へ」ボタンから呼ぶ：No.1（インデックス0）のレシピページへ進む
+    /// </summary>
+    public void StartRecipesFromFirst()
+    {
+        if (ingredientGuidePanel != null)
+        {
+            ingredientGuidePanel.SetActive(false);
+        }
+
+        JumpToPage(0);
+    }
+
+    #endregion
+
+    /// <summary>
+    /// 外部や目次ボタンから直接指定ページにジャンプする
+    /// </summary>
+    public void JumpToPage(int pageIndex)
+    {
+        currentPageIndex = Mathf.Clamp(pageIndex, 0, recipePages.Count - 1);
+
+        if (tocPanel != null)
+        {
+            tocPanel.SetActive(false);
+        }
+
+        if (ingredientGuidePanel != null)
+        {
+            ingredientGuidePanel.SetActive(false);
+        }
+
         if (rowUI != null)
         {
             rowUI.gameObject.SetActive(true);
         }
 
-        // ページの表示内容を更新
         UpdatePageDisplay();
     }
 
-    /// <summary>
-    /// 目次用：全レシピスロットのリストを取得する
-    /// </summary>
     public List<RecipeSlot> GetRecipePages()
     {
         return recipePages;
     }
 
+    private int GetTotalTocPages()
+    {
+        if (recipePages == null || recipePages.Count == 0) return 1;
+        int perPage = Mathf.Max(1, tocItemsPerPage);
+        return Mathf.CeilToInt((float)recipePages.Count / perPage);
+    }
+
     /// <summary>
-    /// 目次のボタン一覧を生成する
+    /// 目次のボタン一覧を生成する（未確定は No.1, No.2 / 確定後はポーション名）
     /// </summary>
     private void InitializeTableOfContents()
     {
         if (tocButtonContainer == null || tocButtonPrefab == null) return;
 
-        // 既存のボタンを削除
         foreach (Transform child in tocButtonContainer)
         {
             Destroy(child.gameObject);
         }
 
-        for (int i = 0; i < recipePages.Count; i++)
+        int perPage = Mathf.Max(1, tocItemsPerPage);
+        int totalPages = GetTotalTocPages();
+        currentTocPageIndex = Mathf.Clamp(currentTocPageIndex, 0, totalPages - 1);
+
+        int startIndex = currentTocPageIndex * perPage;
+        int endIndex = Mathf.Min(startIndex + perPage, recipePages.Count);
+
+        for (int i = startIndex; i < endIndex; i++)
         {
-            int index = i; // クロージャ（ローカル変数保持）対策
+            int recipeIndex = i;
             GameObject btnObj = Instantiate(tocButtonPrefab, tocButtonContainer);
 
-            // テキストの反映
             var textComp = btnObj.GetComponentInChildren<TextMeshProUGUI>();
-            if (textComp != null && recipePages[i].targetRecipe != null)
+            if (textComp != null)
             {
-                string potionName = recipePages[i].targetRecipe.PotionName;
-                string potionId = recipePages[i].targetRecipe.recipeId;
-               
-                textComp.text = $"{potionId}.{potionName} ";
+                textComp.text = GetDisplayPotionName(i, recipePages[i]);
             }
 
             bool isConfirmed = recipePages[i].isConfirmed;
-            Transform checkIconTrans = btnObj.transform.Find("CheckIcon"); // または GetComponentInChildren を使用
+            Transform checkIconTrans = btnObj.transform.Find("CheckIcon");
             if (checkIconTrans != null)
             {
                 checkIconTrans.gameObject.SetActive(isConfirmed);
             }
 
-            // ボタンのクリックイベント設定
             var button = btnObj.GetComponent<Button>();
             if (button != null)
             {
-                button.onClick.RemoveAllListeners(); // 二重登録防止
+                button.onClick.RemoveAllListeners();
                 button.onClick.AddListener(() =>
                 {
-                    JumpToPage(index); // ページ切り替え＆目次非表示を実行
+                    JumpToPage(recipeIndex);
                 });
             }
         }
+
+        UpdateTocNavigationUI(totalPages);
     }
 
+
+    /// <summary>
+    /// 目次ページ送り用のメソッド
+    /// </summary>
+
+    private bool IsLastTocPage()
+    {
+        return currentTocPageIndex >= GetTotalTocPages() - 1;
+    }
+
+    public void NextTocPage()
+    {
+        if (!IsLastTocPage())
+        {
+            currentTocPageIndex++;
+            InitializeTableOfContents();
+        }
+        else
+        {
+            // 目次の最終ページから「次へ」を押したら材料ガイドへ
+            OpenIngredientGuide();
+        }
+    }
+
+    public void PrevTocPage()
+    {
+        if (currentTocPageIndex > 0)
+        {
+            currentTocPageIndex--;
+            InitializeTableOfContents();
+        }
+    }
+
+    private void UpdateTocNavigationUI(int totalPages)
+    {
+        if (tocPageText != null)
+        {
+            tocPageText.text = $"目次 {currentTocPageIndex + 1} / {totalPages}";
+        }
+
+        if (tocPrevButton != null)
+        {
+            tocPrevButton.SetActive(currentTocPageIndex > 0);
+        }
+
+        // 最終目次ページでも「次へ（＝材料ガイドへ）」を押せるよう表示を維持する
+        if (tocNextButton != null)
+        {
+            tocNextButton.SetActive(true);
+        }
+    }
 
     /// <summary>
     /// 目次を開く（どの画面からでも呼べる）
     /// </summary>
     public void OpenTableOfContents()
     {
-        SaveCurrentInput(); // 現在の入力を保存
+        SaveCurrentInput();
 
-        // ★ 1. 詳細画面を非表示にする
         if (rowUI != null)
         {
             rowUI.gameObject.SetActive(false);
         }
 
-        // ★ 2. 目次パネルを表示する
+        if (ingredientGuidePanel != null)
+        {
+            ingredientGuidePanel.SetActive(false);
+        }
+
         if (tocPanel != null)
         {
             tocPanel.SetActive(true);
-            tocPanel.transform.SetAsLastSibling(); // Canvasの一番手前に持ってきて確実に表示
+            tocPanel.transform.SetAsLastSibling();
         }
 
+        BringFixedButtonsToFront();
+        InitializeTableOfContents();
+    }
+
+
+    private void BringFixedButtonsToFront()
+    {
         if (sceneChangeButtonRect != null)
         {
             sceneChangeButtonRect.SetAsLastSibling();
         }
 
-        
         if (optionButtonRect != null)
         {
             optionButtonRect.SetAsLastSibling();
         }
-        // 目次ボタンの一覧を最新化（確定状況の反映など）
-        InitializeTableOfContents();
     }
 
-    /// <summary>
-    /// 自動判定処理（5要素が揃った瞬間に自動呼び出し）
-    /// </summary>
     private void CheckCurrentAnswerAuto()
     {
         RecipeSlot currentPage = recipePages[currentPageIndex];
 
         if (currentPage.targetRecipe == null) return;
 
-        // 正解判定（recipeChecker を使用：引数を効能に変更）
         if (currentPage.targetRecipe.recipeChecker(
             currentPage.inputA,
             currentPage.inputB,
@@ -451,7 +574,6 @@ public class RecipeManager : MonoBehaviour
             currentPage.inputScent,
             currentPage.inputEffect))
         {
-            // 正解処理
             currentPage.isConfirmed = true;
             rowUI.SetDropdownSprites(true);
 
@@ -460,7 +582,6 @@ public class RecipeManager : MonoBehaviour
                 CleanUpConfirmedInputs(p);
             }
 
-            // データの保存
             RecipeDataStore.SavePageData(
                 currentPageIndex,
                 currentPage.isConfirmed,
@@ -471,10 +592,9 @@ public class RecipeManager : MonoBehaviour
                 currentPage.inputScent
             );
 
-            // 画面の更新
             UpdatePageDisplay();
 
-            Debug.Log($"【確定！】レシピ {currentPageIndex + 1} の効能が一致したためロックされました！");
+            Debug.Log($"【確定！】レシピ {currentPageIndex + 1} が確定しました！");
 
             CheckProgressionAfterConfirm();
         }
@@ -494,7 +614,6 @@ public class RecipeManager : MonoBehaviour
 
         SaveCurrentInput();
 
-        // 正解チェック
         if (currentPage.targetRecipe.recipeChecker(
             currentPage.inputA,
             currentPage.inputB,
@@ -503,7 +622,7 @@ public class RecipeManager : MonoBehaviour
             currentPage.inputEffect))
         {
             currentPage.isConfirmed = true;
-            rowUI.SetInteractable(false); // UIをロック
+            rowUI.SetInteractable(false);
             HideDropdownArrows(false);
             rowUI.SetDropdownSprites(true);
 
@@ -519,20 +638,12 @@ public class RecipeManager : MonoBehaviour
 
             CheckProgressionAfterConfirm();
         }
-       
     }
 
-    /// <summary>
-    /// すでに他のページで確定している正解の要素が、
-    /// 未確定ページの入力欄に残っていれば「？？？」にリセットする
-    /// </summary>
     private void CleanUpConfirmedInputs(RecipeSlot page)
     {
-        // 確定済みのページは変更しない
         if (page.isConfirmed || page.targetRecipe == null) return;
 
-        // 全ページの確定データから「すでに使われている確定要素」を集める
-                
         HashSet<string> confirmedEffectsSet = new HashSet<string>();
         HashSet<string> confirmedColorsSet = new HashSet<string>();
 
@@ -542,19 +653,13 @@ public class RecipeManager : MonoBehaviour
             {
                 confirmedEffectsSet.Add(p.targetRecipe.PotionEffectt);
                 confirmedColorsSet.Add(p.targetRecipe.PotionColor);
-                
             }
         }
 
-        // 入力値が他の場所で確定済みなら "？？？" にリセット
         if (confirmedEffectsSet.Contains(page.inputEffect)) page.inputEffect = "？？？";
         if (confirmedColorsSet.Contains(page.inputColor)) page.inputColor = "？？？";
-        
     }
 
-    /// <summary>
-    /// シーン遷移ボタンなどを押した際に明示的に呼び出す保存処理
-    /// </summary>
     public void SaveAllPagesDataForSceneChange()
     {
         SaveCurrentInput();
@@ -574,18 +679,9 @@ public class RecipeManager : MonoBehaviour
         }
     }
 
-
-
     private void CheckAllRecipesCleared()
     {
-        foreach (var page in recipePages)
-        {
-            if (!page.isConfirmed)
-            {
-                return;
-            }
-        }
-
+        if (!IsAllRecipesCleared()) return;
         OnGameClear();
     }
 
@@ -593,7 +689,6 @@ public class RecipeManager : MonoBehaviour
     {
         Debug.Log("【祝！全レシピ解明！】全てのポーションレシピが完全に特定されました！");
 
-        // 念のため全ページの確定状態を保存しておく
         SaveAllPagesDataForSceneChange();
 
         if (GameFlowManager.Instance != null)
@@ -602,9 +697,6 @@ public class RecipeManager : MonoBehaviour
         }
     }
 
-    /// <summary>
-    /// 現在の確定済みレシピ数を返す
-    /// </summary>
     public int GetConfirmedCount()
     {
         int count = 0;
@@ -620,19 +712,14 @@ public class RecipeManager : MonoBehaviour
         return count;
     }
 
-    /// <summary>
-    /// レシピ確定後の進行チェック（全クリア → 幕間の順で判定）
-    /// </summary>
     private void CheckProgressionAfterConfirm()
     {
-        // すべて埋まっているなら全クリア処理へ
         if (IsAllRecipesCleared())
         {
             OnGameClear();
             return;
         }
 
-        // 一定数に達していて未視聴なら幕間会話へ遷移
         if (GameFlowManager.Instance != null)
         {
             int confirmedCount = GetConfirmedCount();
@@ -655,14 +742,10 @@ public class RecipeManager : MonoBehaviour
         return recipePages.Count > 0;
     }
 
-    /// <summary>
-    /// rowUI 内にあるすべてのドロップダウンから「Arrow（矢印）」を探して非表示にする
-    /// </summary>
     private void HideDropdownArrows(bool isActive)
     {
         if (rowUI == null) return;
 
-        // rowUI の中（子孫要素すべて）から "Arrow" という名前のTransformをすべて探す
         Transform[] allChildren = rowUI.GetComponentsInChildren<Transform>(true);
         foreach (Transform child in allChildren)
         {
