@@ -38,6 +38,8 @@ public class GameFlowManager : MonoBehaviour
 
     private void Awake()
     {
+        SoundManager.Instance.StopBGM();
+
         if (Instance != null && Instance != this)
         {
             Destroy(gameObject);

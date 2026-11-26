@@ -51,9 +51,21 @@ MonoBehaviour:
   bgmList:
   - type: 3
     clip: {fileID: 8300000, guid: 693b6d8028192b84c9c1dd5563be6a16, type: 3}
+  - type: 4
+    clip: {fileID: 8300000, guid: d3f98be98df65db409180df7a5051373, type: 3}
   seList:
-  - type: 0
+  - type: 1
     clip: {fileID: 8300000, guid: 0c2d10126724f2c4c9623d276a61644a, type: 3}
+  - type: 2
+    clip: {fileID: 8300000, guid: 92aabfb3842b7974fa4090376efd68af, type: 3}
+  - type: 6
+    clip: {fileID: 8300000, guid: d41963f75acb5d146abdbbec4c6003a0, type: 3}
+  - type: 8
+    clip: {fileID: 8300000, guid: 8f188c7c8f40c5640a4953fb21a7e4ee, type: 3}
+  - type: 4
+    clip: {fileID: 8300000, guid: 270b67edf20518049abe24e4ff7866cb, type: 3}
+  - type: 5
+    clip: {fileID: 8300000, guid: 47b68de9593af55459cbcb5a751de23e, type: 3}
 --- !u!82 &5543848035798244560
 AudioSource:
   m_ObjectHideFlags: 0

@@ -345,7 +345,7 @@ public class MixingManager : MonoBehaviour
         {  
             // フェーズを「調合完了」に移行
             currentPhase = PotionPhase.Mixed;
-            SoundManager.Instance.PlaySE(SoundManager.SEType.Confirm);
+            SoundManager.Instance.PlaySE(SoundManager.SEType.Mix_Brew);
 
 
             // 1. ポーションプレビューの色・マテリアル反映（見た目のヒント）
@@ -365,7 +365,7 @@ public class MixingManager : MonoBehaviour
         else 
         {
             currentPhase = PotionPhase.Failed;
-            SoundManager.Instance.PlaySE(SoundManager.SEType.Confirm);
+            SoundManager.Instance.PlaySE(SoundManager.SEType.Mix_Brew);
 
 
             if (potionPreviewImage != null)
@@ -397,7 +397,7 @@ public class MixingManager : MonoBehaviour
     private void ExecuteTasting()
     {
         currentPhase = PotionPhase.Tasted; // フェーズを「試飲完了」に移行
-        SoundManager.Instance.PlaySE(SoundManager.SEType.Confirm);
+        SoundManager.Instance.PlaySE(SoundManager.SEType.Mix_Brew);
 
 
         if (cachedIsSuccess)
@@ -464,7 +464,7 @@ public class MixingManager : MonoBehaviour
     public void ReuseLogSettings(RecipeDataStore.MixingLog log)
     {
         ResetSelection();
-        SoundManager.Instance.PlaySE(SoundManager.SEType.Cancel);
+        SoundManager.Instance.PlaySE(SoundManager.SEType.Mix_Brew);
 
         selectedIngredient1 = log.ingredientA;
         selectedIngredient2 = log.ingredientB;
@@ -487,6 +487,7 @@ public class MixingManager : MonoBehaviour
         cachedIngredient1 = string.Empty;
         cachedIngredient2 = string.Empty;
 
+        SoundManager.Instance.PlaySE(SoundManager.SEType.Mix_Reset);
 
         if (potionPreviewImage != null)
         {

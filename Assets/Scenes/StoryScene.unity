@@ -777,8 +777,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stillImage: {fileID: 2099012509}
   openingSprites:
-  - {fileID: 21300000, guid: 6b93ca1309591d54a82117cd7e2cb7e2, type: 3}
-  endingSprites: []
+  - {fileID: 21300000, guid: daf4cd513c44f5e44a946e4715c891fa, type: 3}
+  - {fileID: 21300000, guid: f8c8ea47c757b7a4792c4203f45e2cd6, type: 3}
+  - {fileID: 21300000, guid: b6daf0780c9386e4ea5ba17f1e6aeab5, type: 3}
+  - {fileID: 21300000, guid: a388aaea1fbbcc54d875eae8946baaaf, type: 3}
+  - {fileID: 21300000, guid: d6a9c9d3b89a84042b7db4141ec7262f, type: 3}
+  endingSprites:
+  - {fileID: 21300000, guid: 7ef9c0d498cb9a14aab14f4101fea7a6, type: 3}
+  - {fileID: 21300000, guid: 975ed76d69133934da6836ab853a6834, type: 3}
+  - {fileID: 21300000, guid: 7df54d44cc9f8284f88790ff77fc7c6e, type: 3}
   autoAdvance: 0
   autoInterval: 2
 --- !u!114 &2099012509

@@ -68,7 +68,8 @@ public class CommonOptionController : MonoBehaviour
             }
         }
 
-        
+        SoundManager.Instance.PlaySE(SoundManager.SEType.UI_Click);
+
         Time.timeScale = 0f; // ポーズ
     }
 
@@ -79,7 +80,7 @@ public class CommonOptionController : MonoBehaviour
             optionPanel.SetActive(false);
         }
 
-        
+        SoundManager.Instance.PlaySE(SoundManager.SEType.UI_Cancel);
         Time.timeScale = 1f; // 再開
     }
 

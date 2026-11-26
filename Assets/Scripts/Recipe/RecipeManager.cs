@@ -67,6 +67,8 @@ public class RecipeManager : MonoBehaviour
 
     private void Start()
     {
+        SoundManager.Instance.PlayBGM(SoundManager.BGMType.Note);
+
         UpdateProgressDisplay();
 
         if (rowUI == null || optionData == null)
