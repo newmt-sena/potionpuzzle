@@ -22,6 +22,7 @@ public class GameFlowManager : MonoBehaviour
     [SerializeField] private string storySceneName = "storyscene";
     [SerializeField] private string dialogueSceneName = "TalkScene"; // 実際の会話シーン名に合わせる
     [SerializeField] private string mixingSceneName = "MixingScene";     // 実際の調合シーン名に合わせる
+    [SerializeField] private string bonusSceneName = "BonusScene";
 
     [Header("幕間・エンディング条件")]
     [SerializeField] private int interludeRequiredCount = 1; // 幕間に入るために必要な埋まり数
@@ -45,6 +46,18 @@ public class GameFlowManager : MonoBehaviour
 
         Instance = this;
         DontDestroyOnLoad(gameObject);
+    }
+
+    public void ReturnToTitle()
+    {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(titleSceneName);
+    }
+
+    public void OpenBonusScene()
+    {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(bonusSceneName);
     }
 
     /// <summary>

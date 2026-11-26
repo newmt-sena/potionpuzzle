@@ -204,7 +204,7 @@ public class DialogueManager : MonoBehaviour
             {
                 if (SoundManager.Instance != null)
                 {
-                    SoundManager.Instance.PlaySEByName(isLeft ? "エーテル文字送り" : "アルカナ文字送り");
+                   // SoundManager.Instance.PlaySEByName(isLeft ? "エーテル文字送り" : "アルカナ文字送り");
                 }
             }
 

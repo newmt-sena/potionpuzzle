@@ -1,7 +1,10 @@
 using System.Collections.Generic;
+using UnityEngine;
 
 public static class RecipeDataStore
 {
+    private const string ClearedAllKey = "RecipeDataStore_HasClearedAllRecipes";
+
     public class SavedRecipeData
     {
         public bool isConfirmed;
@@ -13,6 +16,27 @@ public static class RecipeDataStore
     }
 
     public static Dictionary<int, SavedRecipeData> SavedPages = new Dictionary<int, SavedRecipeData>();
+
+    /// <summary>
+    /// 一度でも全レシピをクリアしたか（永続化）
+    /// </summary>
+    public static bool HasClearedAllRecipes
+    {
+        get => PlayerPrefs.GetInt(ClearedAllKey, 0) == 1;
+        private set
+        {
+            PlayerPrefs.SetInt(ClearedAllKey, value ? 1 : 0);
+            PlayerPrefs.Save();
+        }
+    }
+
+    /// <summary>
+    /// 全クリア状態を更新・保存する
+    /// </summary>
+    public static void SetClearedAllRecipes(bool cleared = true)
+    {
+        HasClearedAllRecipes = cleared;
+    }
 
     /// <summary>
     /// ページの入力・確定データを保存（未確定でも呼び出す）
@@ -68,7 +92,7 @@ public static class RecipeDataStore
     }
 
     /// <summary>
-    /// すべてのレシピ進捗・調合ログを初期化する
+    /// すべてのレシピ進捗・調合ログを初期化する（全クリア実績は保持）
     /// </summary>
     public static void ResetAll()
     {

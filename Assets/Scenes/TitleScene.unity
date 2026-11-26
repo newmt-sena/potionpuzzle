@@ -799,6 +799,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6887388149010160331, guid: 3aaf8cb869105544bbef32231c2d6586, type: 3}
+      propertyPath: bgmList.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6887388149010160331, guid: 3aaf8cb869105544bbef32231c2d6586, type: 3}
       propertyPath: seClips.Array.size
       value: 9
       objectReference: {fileID: 0}
@@ -850,6 +854,14 @@ PrefabInstance:
       propertyPath: bgmClips.Array.data[1]
       value: 
       objectReference: {fileID: 8300000, guid: d3f98be98df65db409180df7a5051373, type: 3}
+    - target: {fileID: 6887388149010160331, guid: 3aaf8cb869105544bbef32231c2d6586, type: 3}
+      propertyPath: bgmList.Array.data[0].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 693b6d8028192b84c9c1dd5563be6a16, type: 3}
+    - target: {fileID: 6887388149010160331, guid: 3aaf8cb869105544bbef32231c2d6586, type: 3}
+      propertyPath: bgmList.Array.data[0].type
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3aaf8cb869105544bbef32231c2d6586, type: 3}
 --- !u!1 &710921138
@@ -885,6 +897,7 @@ MonoBehaviour:
   storySceneName: StoryScene
   dialogueSceneName: TalkScene
   mixingSceneName: MixingScene
+  bonusSceneName: BonusScene
   interludeRequiredCount: 2
 --- !u!4 &710921140
 Transform:

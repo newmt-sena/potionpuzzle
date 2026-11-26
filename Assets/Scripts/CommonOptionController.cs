@@ -68,10 +68,7 @@ public class CommonOptionController : MonoBehaviour
             }
         }
 
-        if (SoundManager.Instance != null)
-        {
-            SoundManager.Instance.PlaySEByName("設定画面");
-        }
+        
         Time.timeScale = 0f; // ポーズ
     }
 
@@ -82,10 +79,7 @@ public class CommonOptionController : MonoBehaviour
             optionPanel.SetActive(false);
         }
 
-        if (SoundManager.Instance != null)
-        {
-            SoundManager.Instance.PlaySEByName("キャンセル2");
-        }
+        
         Time.timeScale = 1f; // 再開
     }
 

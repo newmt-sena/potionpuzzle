@@ -48,8 +48,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bgmAudioSource: {fileID: 5543848035798244560}
   seAudioSource: {fileID: 483095536533992651}
-  bgmClips: []
-  seClips: []
+  bgmList:
+  - type: 3
+    clip: {fileID: 8300000, guid: 693b6d8028192b84c9c1dd5563be6a16, type: 3}
+  seList:
+  - type: 0
+    clip: {fileID: 8300000, guid: 0c2d10126724f2c4c9623d276a61644a, type: 3}
 --- !u!82 &5543848035798244560
 AudioSource:
   m_ObjectHideFlags: 0

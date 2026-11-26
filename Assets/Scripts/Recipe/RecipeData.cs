@@ -6,6 +6,12 @@ using UnityEngine.Windows;
 [CreateAssetMenu(fileName = "NewRecipeData", menuName = "Potion/RecipeData")]
 public class RecipeData : ScriptableObject
 {
+    public enum PotionNoteAuthor
+    {
+        Arcana, // アルカナ
+        Ether   // エーテル
+    }
+
     [Header("参照する選択肢データ（タイポ防止用）")]
     public OptionData optionData;
 
@@ -28,11 +34,14 @@ public class RecipeData : ScriptableObject
     [TextArea(2, 4)]
     [SerializeField] private string trueEffectMemo;
 
-    [Header("確定後に出るアルカナメモ")]
+    [Header("アルカナメモ")]
     [TextArea(2, 4)]
     [SerializeField] private string thoughtsMemo;
 
-    [Header("確定後に出るアルカナ・エーテルメモ(オマケ用)")]
+    [Header("オマケ用・解説の執筆者")]
+    [SerializeField] private PotionNoteAuthor noteAuthor = PotionNoteAuthor.Arcana;
+     public PotionNoteAuthor NoteAuthor => noteAuthor;
+    [Header("ポーション解説")]
     [TextArea(2, 4)]
     [SerializeField] private string clearThoughtsMemo;
 

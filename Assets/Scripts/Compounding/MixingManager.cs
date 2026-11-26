@@ -86,6 +86,8 @@ public class MixingManager : MonoBehaviour
 
     void Start()
     {
+        SoundManager.Instance.PlayBGM(SoundManager.BGMType.Mixing);
+
         if (coldTempButton != null) coldBtnImage = coldTempButton.GetComponent<Image>();
         if (normalTempButton != null) normalBtnImage = normalTempButton.GetComponent<Image>();
         if (hotTempButton != null) hotBtnImage = hotTempButton.GetComponent<Image>();
@@ -115,7 +117,7 @@ public class MixingManager : MonoBehaviour
         UpdateTemperatureUI();
         UpdateUI();
 
-        SoundManager.Instance.PlayBGMByName("Fancy_Pop");
+        
     }
 
     private void InitializeIngredientList()
@@ -343,8 +345,8 @@ public class MixingManager : MonoBehaviour
         {  
             // フェーズを「調合完了」に移行
             currentPhase = PotionPhase.Mixed;
+            SoundManager.Instance.PlaySE(SoundManager.SEType.Confirm);
 
-            SoundManager.Instance.PlaySEByName("決定ボタン1");
 
             // 1. ポーションプレビューの色・マテリアル反映（見た目のヒント）
             if (potionPreviewImage != null)
@@ -363,8 +365,8 @@ public class MixingManager : MonoBehaviour
         else 
         {
             currentPhase = PotionPhase.Failed;
+            SoundManager.Instance.PlaySE(SoundManager.SEType.Confirm);
 
-            SoundManager.Instance.PlaySEByName("決定ボタン1");
 
             if (potionPreviewImage != null)
             {
@@ -395,8 +397,8 @@ public class MixingManager : MonoBehaviour
     private void ExecuteTasting()
     {
         currentPhase = PotionPhase.Tasted; // フェーズを「試飲完了」に移行
+        SoundManager.Instance.PlaySE(SoundManager.SEType.Confirm);
 
-        SoundManager.Instance.PlaySEByName("決定ボタン1");
 
         if (cachedIsSuccess)
         {
@@ -462,6 +464,7 @@ public class MixingManager : MonoBehaviour
     public void ReuseLogSettings(RecipeDataStore.MixingLog log)
     {
         ResetSelection();
+        SoundManager.Instance.PlaySE(SoundManager.SEType.Cancel);
 
         selectedIngredient1 = log.ingredientA;
         selectedIngredient2 = log.ingredientB;
@@ -484,7 +487,6 @@ public class MixingManager : MonoBehaviour
         cachedIngredient1 = string.Empty;
         cachedIngredient2 = string.Empty;
 
-        SoundManager.Instance.PlaySEByName("キャンセル1");
 
         if (potionPreviewImage != null)
         {

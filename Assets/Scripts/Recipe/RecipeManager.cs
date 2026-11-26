@@ -344,6 +344,7 @@ public class RecipeManager : MonoBehaviour
     /// </summary>
     public void OpenIngredientGuide()
     {
+        Debug.Log($"[TOC] OpenIngredientGuide called. tocPanel={(tocPanel != null)}, guide={(ingredientGuidePanel != null)}");
         SaveCurrentInput();
 
         if (tocPanel != null)
@@ -360,6 +361,7 @@ public class RecipeManager : MonoBehaviour
         {
             ingredientGuidePanel.SetActive(true);
             ingredientGuidePanel.transform.SetAsLastSibling();
+            Debug.Log($"[TOC] Guide activeSelf={ingredientGuidePanel.activeSelf}, activeInHierarchy={ingredientGuidePanel.activeInHierarchy}");
         }
 
         BringFixedButtonsToFront();
@@ -480,23 +482,31 @@ public class RecipeManager : MonoBehaviour
 
     public void NextTocPage()
     {
-        if (!IsLastTocPage())
+        int totalPages = GetTotalTocPages();
+        Debug.Log($"[TOC] NextTocPage called: current={currentTocPageIndex}, total={totalPages}");
+
+        if (currentTocPageIndex < totalPages - 1)
         {
             currentTocPageIndex++;
+            Debug.Log($"[TOC] Incremented currentTocPageIndex to {currentTocPageIndex}");
             InitializeTableOfContents();
         }
         else
         {
-            // 目次の最終ページから「次へ」を押したら材料ガイドへ
+            Debug.Log("[TOC] Reached last TOC page -> calling OpenIngredientGuide()");
             OpenIngredientGuide();
         }
     }
 
     public void PrevTocPage()
     {
+        int totalPages = GetTotalTocPages();
+        Debug.Log($"[TOC] PrevTocPage before: current={currentTocPageIndex}, total={totalPages}");
+
         if (currentTocPageIndex > 0)
         {
             currentTocPageIndex--;
+            Debug.Log($"[TOC] Decremented currentTocPageIndex to {currentTocPageIndex}");
             InitializeTableOfContents();
         }
     }
@@ -525,6 +535,7 @@ public class RecipeManager : MonoBehaviour
     /// </summary>
     public void OpenTableOfContents()
     {
+        Debug.Log($"[TOC] OpenTableOfContents called (currentTocPageIndex={currentTocPageIndex})");
         SaveCurrentInput();
 
         if (rowUI != null)
@@ -689,6 +700,7 @@ public class RecipeManager : MonoBehaviour
     {
         Debug.Log("【祝！全レシピ解明！】全てのポーションレシピが完全に特定されました！");
 
+        RecipeDataStore.SetClearedAllRecipes(true);
         SaveAllPagesDataForSceneChange();
 
         if (GameFlowManager.Instance != null)
@@ -755,4 +767,107 @@ public class RecipeManager : MonoBehaviour
             }
         }
     }
+
+
+
+
+
+
+
+
+    #region デバッグ用：正解一括入力・確定
+
+    /// <summary>
+    /// 現在開いている1ページ分に正解を入力して確定させる（デバッグ用）
+    /// </summary>
+    public void DebugFillCurrentRecipeAnswer()
+    {
+        if (recipePages == null || recipePages.Count == 0) return;
+
+        RecipeSlot slot = recipePages[currentPageIndex];
+        if (slot == null || slot.targetRecipe == null) return;
+
+        ApplyCorrectAnswerToSlot(slot);
+
+        foreach (var p in recipePages)
+        {
+            CleanUpConfirmedInputs(p);
+        }
+
+        SaveAllPagesDataForSceneChange();
+
+        if (rowUI != null && rowUI.gameObject.activeSelf)
+        {
+            UpdatePageDisplay();
+        }
+        else if (tocPanel != null && tocPanel.activeSelf)
+        {
+            InitializeTableOfContents();
+        }
+
+        Debug.Log($"[Debug] レシピ {currentPageIndex + 1}（{slot.targetRecipe.PotionName}）に正解を入力して確定しました。");
+        CheckProgressionAfterConfirm();
+    }
+
+    /// <summary>
+    /// 全レシピページに正解を入力して確定させる（デバッグ用）
+    /// </summary>
+    public void DebugFillAllRecipeAnswers()
+    {
+        if (recipePages == null || recipePages.Count == 0) return;
+
+        foreach (var slot in recipePages)
+        {
+            if (slot == null || slot.targetRecipe == null) continue;
+            ApplyCorrectAnswerToSlot(slot);
+        }
+
+        foreach (var p in recipePages)
+        {
+            CleanUpConfirmedInputs(p);
+        }
+
+        SaveAllPagesDataForSceneChange();
+        UpdateProgressDisplay();
+
+        if (rowUI != null && rowUI.gameObject.activeSelf)
+        {
+            UpdatePageDisplay();
+        }
+        else if (tocPanel != null && tocPanel.activeSelf)
+        {
+            InitializeTableOfContents();
+        }
+
+        Debug.Log($"[Debug] 全 {recipePages.Count} 件のレシピに正解を入力して確定しました。");
+        CheckProgressionAfterConfirm();
+    }
+
+    private void ApplyCorrectAnswerToSlot(RecipeSlot slot)
+    {
+        RecipeData data = slot.targetRecipe;
+        slot.inputA = data.PotionIngredientA;
+        slot.inputB = data.PotionIngredientB;
+        slot.inputColor = data.PotionColor;
+        slot.inputScent = data.PotionScent;
+        slot.inputEffect = data.PotionEffectt;
+        slot.isConfirmed = true;
+    }
+
+#if UNITY_EDITOR || DEVELOPMENT_BUILD
+    private void Update()
+    {
+        // 必要に応じてショートカットキーからも呼べるようにしておく（例：F9で現在ページ、F10で全ページ）
+        if (Input.GetKeyDown(KeyCode.F9))
+        {
+            DebugFillCurrentRecipeAnswer();
+        }
+        else if (Input.GetKeyDown(KeyCode.F10))
+        {
+            DebugFillAllRecipeAnswers();
+        }
+    }
+#endif
+
+    #endregion
 }

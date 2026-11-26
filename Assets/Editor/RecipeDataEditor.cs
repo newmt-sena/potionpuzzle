@@ -49,7 +49,8 @@ public class RecipeDataEditor : Editor
         EditorGUILayout.Space(6);
         EditorGUILayout.PropertyField(thoughtsMemoProp, new GUIContent("確定後メモ"));
         EditorGUILayout.Space(3);
-        EditorGUILayout.PropertyField(clearThoughtsMemoProp, new GUIContent("オマケ用メモ（アルカナ・エーテル）"));
+        EditorGUILayout.PropertyField(clearThoughtsMemoProp, new GUIContent("オマケ用メモ"));
+
 
         if (recipe.optionData == null)
         {
