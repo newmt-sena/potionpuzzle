@@ -390,7 +390,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1600, y: 250}
+  m_SizeDelta: {x: 1500, y: 250}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1236784970
 MonoBehaviour:
@@ -439,15 +439,15 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 70
-  m_fontSizeBase: 70
+  m_fontSize: 60
+  m_fontSizeBase: 60
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 2
-  m_VerticalAlignment: 256
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -671,11 +671,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 571445025028278179, guid: 7adc8af5fddb61f48816fd5715afd15d, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 571445025028278179, guid: 7adc8af5fddb61f48816fd5715afd15d, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2611988091057383742, guid: 7adc8af5fddb61f48816fd5715afd15d, type: 3}
       propertyPath: m_Name
@@ -683,7 +683,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2611988091057383742, guid: 7adc8af5fddb61f48816fd5715afd15d, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2611988091057383743, guid: 7adc8af5fddb61f48816fd5715afd15d, type: 3}
       propertyPath: m_Pivot.x
@@ -771,11 +771,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5894347260884527489, guid: 7adc8af5fddb61f48816fd5715afd15d, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5894347260884527489, guid: 7adc8af5fddb61f48816fd5715afd15d, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6492075990575263023, guid: 7adc8af5fddb61f48816fd5715afd15d, type: 3}
       propertyPath: openButton
@@ -783,11 +783,11 @@ PrefabInstance:
       objectReference: {fileID: 467835165}
     - target: {fileID: 6698195937456118805, guid: 7adc8af5fddb61f48816fd5715afd15d, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8988520617755065172, guid: 7adc8af5fddb61f48816fd5715afd15d, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7adc8af5fddb61f48816fd5715afd15d, type: 3}
@@ -997,30 +997,49 @@ MonoBehaviour:
   openingSlides:
   - sprite: {fileID: 21300000, guid: daf4cd513c44f5e44a946e4715c891fa, type: 3}
     lines:
-    - "\u30C6\u30B9\u30C81"
+    - "\u3042\u308B\u3068\u3053\u308D\u306B\u3001\u30DD\u30FC\u30B7\u30E7\u30F3\u3068\u3044\u3046\u5B58\u5728\u306B\u9B45\u5165\u3089\u308C\u3001\u305D\u308C\u4EE5\u6765\\n\u5C0F\u5C4B\u306B\u5F15\u304D\u3053\u3082\u308A\u5B9F\u9A13\u306B\u660E\u3051\u66AE\u308C\u308B\u3001\\n\u3059\u3053\u3057\u5909\u308F\u308A\u8005\u306E\u9F8D\u304C\u3044\u307E\u3057\u305F\u3002\r"
+    - "\u5F7C\u306E\u540D\u524D\u306F\u300C\u30A2\u30EB\u30AB\u30CA\u300D\u3002\r\n\u30A2\u30EB\u30AB\u30CA\u306F\u30DD\u30FC\u30B7\u30E7\u30F3\u306E\u6700\u9AD8\u5CF0\u3068\u3082\u8A00\u308F\u308C\u308B\\n\"\u30A8\u30EA\u30AF\u30B5\u30FC\"\u3092\u81EA\u5206\u3060\u3051\u304C\u898B\u3064\u3051\u305F\u30EC\u30B7\u30D4\u3067\u4F5C\u308B\u3053\u3068\u3092\\n\u76EE\u6307\u3057\u3066\u3044\u307E\u3057\u305F\u3002\r"
+    - "\u3067\u3059\u304C\u3001\u4ECA\u5F7C\u304C\u3044\u308B\u5C0F\u5C4B\u306F\u3001\u5B9F\u9A13\u3092\u3059\u308B\u306B\u3057\u3066\u306F\\n\u5C11\u3005\u624B\u72ED\u306B\u306A\u3063\u3066\u3044\u307E\u3057\u305F\u3002\r"
   - sprite: {fileID: 21300000, guid: f8c8ea47c757b7a4792c4203f45e2cd6, type: 3}
     lines:
-    - "\u30C6\u30B9\u30C82"
+    - "\u305D\u3046\u3057\u3066\u898B\u3064\u3051\u305F\u306E\u304C\u7834\u683C\u306E\u5024\u6BB5\u3067\u58F2\u308A\u51FA\u3055\u308C\u3066\u3044\u305F\\n\u90CA\u5916\u306E\u5EC3\u589F\u5C0F\u5C4B\u3002"
+    - "\u8352\u308C\u5207\u3063\u3066\u306F\u3044\u308B\u3082\u306E\u306E\u3001\u8AB0\u306B\u3082\u8FF7\u60D1\u3092\u304B\u3051\u305A\\n\u601D\u3044\u5207\u308A\u5B9F\u9A13\u304C\u51FA\u6765\u308B\u3001\u30A2\u30EB\u30AB\u30CA\u306B\u3068\u3063\u3066\u306F\\n\u7D76\u597D\u306E\u5834\u6240\u3067\u3057\u305F\u3002\r"
+    - "\u30A2\u30EB\u30AB\u30CA\u306F\u3055\u3063\u305D\u304F\u305D\u306E\u5EC3\u589F\u306E\u63A2\u7D22\u3092\\n\u59CB\u3081\u308B\u3053\u3068\u306B\u3057\u307E\u3057\u305F\u3002\r"
   - sprite: {fileID: 21300000, guid: b6daf0780c9386e4ea5ba17f1e6aeab5, type: 3}
     lines:
-    - "\u30C6\u30B9\u30C83"
-    - "\u30C6\u30B9\u30C84"
+    - "\u4E2D\u306B\u5165\u3063\u305F\u3068\u3053\u308D\u3067\u3001\u30A2\u30EB\u30AB\u30CA\u306F\u5012\u308C\u305F\u68DA\u306E\u5F71\u304B\u3089\\n\u8996\u7DDA\u3092\u611F\u3058\u307E\u3057\u305F\u3002\r"
+    - "\u6697\u304C\u308A\u3067\u9854\u3053\u305D\u3088\u304F\u898B\u3048\u307E\u305B\u3093\u304C\u3001\\n\u3069\u3046\u3084\u3089\u3053\u3053\u306B\u4F4F\u307F\u7740\u3044\u3066\u3044\u305F\u307F\u306A\u3057\u3054\u306E\u3088\u3046\u3067\u3057\u305F\u3002\r"
+    - "\u92ED\u3044\u76EE\u3064\u304D\u3067\u3053\u3061\u3089\u3092\u7768\u307F\u3064\u3051\u3066\u3044\u308B\u5B50\u4F9B\u306B\u3001\\n\u30A2\u30EB\u30AB\u30CA\u306F\u305D\u3063\u3068\u8FD1\u3065\u304D\u307E\u3057\u305F\u3002\r"
   - sprite: {fileID: 21300000, guid: a388aaea1fbbcc54d875eae8946baaaf, type: 3}
     lines:
-    - "\u30C6\u30B9\u30C85"
+    - "\u30A2\u30EB\u30AB\u30CA\u306F\u6301\u3063\u3066\u3044\u305F\u8377\u7269\u306E\u4E2D\u304B\u3089\u30EA\u30F3\u30B4\u3092\u53D6\u308A\u51FA\u3057\u3001\\n\u305D\u308C\u3092\u305D\u3063\u3068\u8EE2\u304C\u3059\u3088\u3046\u306B\u5B50\u4F9B\u306B\u6E21\u3057\u307E\u3057\u305F\u3002"
+    - "\u5B50\u4F9B\u306F\u6700\u521D\u3053\u305D\u8B66\u6212\u3057\u3066\u3044\u307E\u3057\u305F\u304C\u3001\\n\u304A\u305D\u308B\u304A\u305D\u308B\u305D\u306E\u30EA\u30F3\u30B4\u3092\u624B\u306B\u53D6\u308A\u98DF\u3079\u59CB\u3081\u307E\u3057\u305F\u3002"
+    - "\u305D\u308C\u3092\u898B\u305F\u30A2\u30EB\u30AB\u30CA\u306F\u3001\u5B50\u4F9B\u306B\u3053\u3046\u58F0\u3092\u304B\u3051\u307E\u3057\u305F\u3002\r"
   - sprite: {fileID: 21300000, guid: d6a9c9d3b89a84042b7db4141ec7262f, type: 3}
     lines:
-    - "\u30C6\u30B9\u30C86"
+    - "\u300C\u541B\u3001\u79C1\u306E\u52A9\u624B\u306B\u306A\u308B\u3064\u3082\u308A\u306F\u306A\u3044\u304B\uFF1F\u300D"
   endingSlides:
   - sprite: {fileID: 21300000, guid: 7ef9c0d498cb9a14aab14f4101fea7a6, type: 3}
     lines:
-    - "\u30C6\u30B9\u30C81"
+    - "\u30A8\u30FC\u30C6\u30EB\u306E\u30A2\u30A4\u30C7\u30A2\u306B\u3088\u3063\u3066\u3001\u4F5C\u3089\u308C\u305F\u30DD\u30FC\u30B7\u30E7\u30F3\u306F\\n\u5E02\u5834\u306B\u6D41\u308C\u308B\u3053\u3068\u3068\u306A\u308A\u307E\u3057\u305F\u3002"
+    - "\u5546\u54C1\u306E\u5370\u306B\u306F\u3001\u30A2\u30EB\u30AB\u30CA\u304C\u8DA3\u5473\u3067\u81EA\u4F5C\u3057\u3066\u3044\u305F\\n\u5224\u5B50\u306E\u6A21\u69D8\u304C\u305D\u306E\u307E\u307E\u4F7F\u308F\u308C\u308B\u3053\u3068\u306B\u3002"
+    - "\u6700\u521D\u3053\u305D\u898B\u6163\u308C\u306A\u3044\u7269\u306B\u58F2\u4E0A\u306F\u82B3\u3057\u304F\u3042\u308A\u307E\u305B\u3093\u3067\u3057\u305F\u304C\u3001\\n\u73CD\u3057\u3055\u304B\u3089\u624B\u306B\u53D6\u3063\u305F\u5BA2\u305F\u3061\u306E\u9593\u3067\u77AC\u304F\u9593\u306B\u8A55\u5224\u304C\u5E83\u307E\u308A\u307E\u3057\u305F\u3002"
+    - "\u300C\u3042\u306E\u5370\u306E\u30DD\u30FC\u30B7\u30E7\u30F3\u306F\u3001\u3069\u3053\u306E\u5E97\u306E\u3082\u306E\u3088\u308A\u3082\u52B9\u304D\u76EE\u3082\u51FA\u6765\u3082\u3044\u3044\u300D\\n\u2015\u2015\u305D\u3093\u306A\u5642\u3068\u3068\u3082\u306B\u3001\u6CE8\u6587\u306F\u65E5\u3054\u3068\u306B\u5897\u3048\u3066\u3044\u304D\u307E\u3057\u305F\u3002"
   - sprite: {fileID: 21300000, guid: 975ed76d69133934da6836ab853a6834, type: 3}
     lines:
-    - "\u30C6\u30B9\u30C82"
+    - "\u5F97\u3089\u308C\u305F\u8CC7\u91D1\u3092\u5143\u624B\u306B\u3001\u30A2\u30EB\u30AB\u30CA\u3068\u30A8\u30FC\u30C6\u30EB\u306F\\n\u5148\u4EE3\u306E\u30CE\u30FC\u30C8\u3092\u624B\u304C\u304B\u308A\u306B\u65B0\u305F\u306A\u7814\u7A76\u3092\u59CB\u3081\u307E\u3057\u305F\u3002"
+    - "\u65E2\u5B58\u306E\u30EC\u30B7\u30D4\u3092\u5FDC\u7528\u3057\u3001\u5225\u306E\u7D20\u6750\u3092\u639B\u3051\u5408\u308F\u305B\u305F\u65B0\u3057\u3044\u30DD\u30FC\u30B7\u30E7\u30F3\u3092\u6B21\u3005\u3068\u751F\u307F\u51FA\u3057\u3066\u3044\u3063\u305F\u306E\u3067\u3059\u3002"
+    - "\u65B0\u4F5C\u3082\u307E\u305F\u98DB\u3076\u3088\u3046\u306B\u58F2\u308C\u3001\u304B\u3064\u3066\u8352\u308C\u679C\u3066\u3066\u3044\u305F\u5EC3\u589F\u306E\u8ABF\u5408\u5BA4\u306F\u3001\\n\u8272\u3068\u308A\u3069\u308A\u306E\u74F6\u3068\u6D3B\u6C17\u306B\u6E80\u3061\u305F\u7A7A\u9593\u3078\u3068\u5909\u308F\u3063\u3066\u3044\u304D\u307E\u3057\u305F\u3002\r"
   - sprite: {fileID: 21300000, guid: 7df54d44cc9f8284f88790ff77fc7c6e, type: 3}
     lines:
-    - "\u30C6\u30B9\u30C83"
+    - "\u8272\u3068\u308A\u3069\u308A\u306E\u30DD\u30FC\u30B7\u30E7\u30F3\u304C\u4E26\u3076\u3088\u3046\u306B\u306A\u3063\u305F\\n\u5F7C\u3089\u306E\u5BB6\u517C\u8ABF\u5408\u5BA4\u306E\u524D\u306B\u306F\u3001\u3084\u304C\u3066\u771F\u65B0\u3057\u3044\u6728\u306E\u770B\u677F\u304C\u63B2\u3052\u3089\u308C\u307E\u3057\u305F\u3002"
+    - "\u540D\u3082\u306A\u304D\u5EC3\u589F\u3060\u3063\u305F\u3053\u306E\u5834\u6240\u306B\u30012\u4EBA\u3067\u76F8\u8AC7\u3057\u3066\u540D\u4ED8\u3051\u305F\\n\u65B0\u3057\u3044\u540D\u524D\u3002"
+    - "\u300E\u306B\u3058\u3044\u308D\u8ABF\u5408\u5BA4 \u30DD\u30FC\u30B7\u30E7\u30F3\u306E\u3054\u76F8\u8AC7\u306F\u304A\u6C17\u8EFD\u306B\uFF01\u300F"
+    - "\u4ECA\u65E5\u3082\u8ABF\u5408\u5BA4\u304B\u3089\u306F\u3001\u5C11\u3057\u8CD1\u3084\u304B\u306A\u8A71\u3057\u58F0\u3068\u3001\\n\u65B0\u3057\u3044\u85AC\u304C\u653E\u3064\u9999\u308A\u304C\u6F02\u3063\u3066\u304F\u308B\u306E\u3067\u3057\u305F\u3002"
+  useTypewriter: 1
+  charInterval: 0.07
+  playVoiceSE: 0
+  voiceSEType: 1
   autoAdvance: 0
   autoInterval: 2
 --- !u!114 &2099012509

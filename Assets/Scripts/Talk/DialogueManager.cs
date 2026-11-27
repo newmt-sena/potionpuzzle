@@ -82,6 +82,7 @@ public class DialogueManager : MonoBehaviour
     [Header("会話データ（導入・幕間）")]
     [SerializeField] private DialogueEvent[] introDialogueEvents;     // 導入会話データ
     [SerializeField] private DialogueEvent[] interludeDialogueEvents; // 幕間会話データ
+    [SerializeField] private DialogueEvent[] endingDialogueEvents;    // エンディング会話データ
 
     private DialogueEvent[] activeDialogueEvents; // 今回実際に再生する会話データ
     private int currentDialogueIndex = 0; // 現在の会話イベント
@@ -94,7 +95,7 @@ public class DialogueManager : MonoBehaviour
     
     void Start()
     {
-        
+        SoundManager.Instance.StopBGM();
         dialogueUI.SetActive(false);
         StartDialogue();
 
@@ -141,10 +142,22 @@ public class DialogueManager : MonoBehaviour
         dialogueHistory.Clear();
 
         // GameFlowManager の状態に応じて使用する会話データを切り替え
-        if (GameFlowManager.Instance != null &&
-            GameFlowManager.Instance.CurrentDialogueMode == GameFlowManager.DialogueMode.Interlude)
+        if (GameFlowManager.Instance != null)
         {
-            activeDialogueEvents = interludeDialogueEvents;
+            switch (GameFlowManager.Instance.CurrentDialogueMode)
+            {
+                case GameFlowManager.DialogueMode.Interlude:
+                    activeDialogueEvents = interludeDialogueEvents;
+                    break;
+
+                case GameFlowManager.DialogueMode.Ending:
+                    activeDialogueEvents = endingDialogueEvents;
+                    break;
+
+                default:
+                    activeDialogueEvents = introDialogueEvents;
+                    break;
+            }
         }
         else
         {

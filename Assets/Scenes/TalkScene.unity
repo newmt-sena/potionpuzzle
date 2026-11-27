@@ -1705,6 +1705,27 @@ MonoBehaviour:
     showEmote: 
     emoteOnLeftChar: 
     emoteIndices: 
+  endingDialogueEvents:
+  - sentences:
+    - "\u3068\u308A\u3042\u3048\u305A\u3053\u308C\u3067\u30B2\u30FC\u30E0\u304C\u4E00\u5DE1\u3059\u308B\u3088\u3046\u306B\u306A\u3063\u305F\u306A"
+    characterSprites:
+    - {fileID: 21300000, guid: 847af648434796a4a9f025e7239fc787, type: 3}
+    isLCharacter: 00
+    popupItemSprites:
+    - {fileID: 0}
+    showEmote: 00
+    emoteOnLeftChar: 00
+    emoteIndices: 00000000
+  - sentences:
+    - "\u4F1A\u8A71\u6587\u3068\u304B\u3001\u305D\u3046\u3044\u3046\u306E\u8A2D\u5B9A\u3059\u308B\u306E\u304C\u4E00\u756A\u5927\u5909\u305D\u3046\u3067\u3059\u3051\u3069\u306D\u3002"
+    characterSprites:
+    - {fileID: 21300000, guid: b05a674f571fd8346acdde5e27d477b7, type: 3}
+    isLCharacter: 01
+    popupItemSprites:
+    - {fileID: 0}
+    showEmote: 00
+    emoteOnLeftChar: 00
+    emoteIndices: 00000000
   inactiveColor: {r: 0.3962264, g: 0.3962264, b: 0.3962264, a: 1}
 --- !u!4 &795104859
 Transform:

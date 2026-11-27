@@ -14,7 +14,8 @@ public class GameFlowManager : MonoBehaviour
     public enum DialogueMode
     {
         Intro,
-        Interlude
+        Interlude,
+        Ending // ★ 追加：エピローグ前のエンディング会話
     }
 
     [Header("シーン名設定")]
@@ -22,7 +23,7 @@ public class GameFlowManager : MonoBehaviour
     [SerializeField] private string storySceneName = "storyscene";
     [SerializeField] private string dialogueSceneName = "TalkScene"; // 実際の会話シーン名に合わせる
     [SerializeField] private string mixingSceneName = "MixingScene";     // 実際の調合シーン名に合わせる
-    [SerializeField] private string bonusSceneName = "BonusScene";
+    //[SerializeField] private string bonusSceneName = "BonusScene";
 
     [Header("幕間・エンディング条件")]
     [SerializeField] private int interludeRequiredCount = 1; // 幕間に入るために必要な埋まり数
@@ -56,11 +57,11 @@ public class GameFlowManager : MonoBehaviour
         SceneManager.LoadScene(titleSceneName);
     }
 
-    public void OpenBonusScene()
-    {
-        Time.timeScale = 1f;
-        SceneManager.LoadScene(bonusSceneName);
-    }
+    //public void OpenBonusScene()
+    //{
+    //    Time.timeScale = 1f;
+    //    SceneManager.LoadScene(bonusSceneName);
+    //}
 
     /// <summary>
     /// ニューゲーム開始（タイトル画面から呼ぶ）
@@ -147,12 +148,18 @@ public class GameFlowManager : MonoBehaviour
 
         if (CurrentDialogueMode == DialogueMode.Intro)
         {
-            HasReachedMainLoop = true; // 導入完了・調合パートへ突入
+            HasReachedMainLoop = true;
             SceneManager.LoadScene(mixingSceneName);
         }
         else if (CurrentDialogueMode == DialogueMode.Interlude)
         {
             SceneManager.LoadScene(mixingSceneName);
+        }
+        else if (CurrentDialogueMode == DialogueMode.Ending)
+        {
+            // エンディング会話が終わってからエピローグ紙芝居へ進む
+            CurrentStoryMode = StoryMode.Ending;
+            SceneManager.LoadScene(storySceneName);
         }
     }
 
@@ -186,9 +193,9 @@ public class GameFlowManager : MonoBehaviour
     /// </summary>
     public void StartEndingStory()
     {
-        CurrentStoryMode = StoryMode.Ending;
+        CurrentDialogueMode = DialogueMode.Ending;
         Time.timeScale = 1f;
-        SceneManager.LoadScene(storySceneName);
+        SceneManager.LoadScene(dialogueSceneName);
     }
 
     /// <summary>

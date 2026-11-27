@@ -857,6 +857,7 @@ public class RecipeManager : MonoBehaviour
     }
 
 #if UNITY_EDITOR || DEVELOPMENT_BUILD
+
     private void Update()
     {
         // 必要に応じてショートカットキーからも呼べるようにしておく（例：F9で現在ページ、F10で全ページ）
@@ -869,6 +870,9 @@ public class RecipeManager : MonoBehaviour
             DebugFillAllRecipeAnswers();
         }
     }
+
+
+
 #endif
 
     #endregion
